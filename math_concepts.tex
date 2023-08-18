@@ -1,0 +1,82 @@
+\documentclass{report}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tabularx}
+
+
+\title{Math Concepts for Econ Tripos 2A Paper 6}
+\author{Emre Usenmez\thanks{Gonville \verb|&| Caius College}}
+\date{August 2023}
+
+\usepackage{Sweave}
+\begin{document}
+\input{math_concepts-concordance}
+
+\chapter{Sets}
+
+\section{Definitions}
+
+If $x$ is an element of a set $S$, we write $x \in S$. This is read "$x$ in $S$".
+
+\begin{itemize}
+  \item The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\} \footnote{Note that it does not include 0.} For e.g.,
+  \begin{itemize}
+    \item $\{n^2:n \in \mathbb{N} \} = \{1, 4, 9, 16, 25, \dots\}$
+    \item $\{n \in \mathbb{N} : 6|n\} = \{6, 12, 18, 24, 30, \dots\}$
+  \end{itemize}
+
+  \item The set of \emph{integers}, denoted $\mathbb{Z}$ is the set \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}. For e.g.,
+  \begin{itemize}
+    \item $\{|n|:n \in \mathbb{Z} \} = \{0, 1, 2, 3, \dots\}$
+    \item $\{n \in \mathbb{Z}: n is even\} = \{\dots, -6, -4, -2, 0, 2, 4, 6, \dots \}$
+  \end{itemize}
+
+  \item The set of \emph{rational numbers}, denoted $\mathbb{Q}$ is the set $\{\frac{a}{b}: a,b \in \mathbb{Z}, b \neq 0 \}$
+  \begin{itemize}
+    \item This can be read as the following:
+          \begin{center}
+          \begin{tabularx}{0.95\textwidth}{ % table width is set to 0.8\textwidth, which is 95% of the document's text width.
+            | >{\centering\arraybackslash}X % sets the alignment of each column. Instead of \centering it can be \raggedleft or \raggedright
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X
+            | >{\centering\arraybackslash}X | }
+            $\mathbb{Q}$ & = & \{ & $\frac{a}{b}$ & : & $a,b \in \mathbb{Z}$ & , & $b \neq 0\}$ \\
+            \hline
+            The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
+          \end{tabularx}
+          \end{center}
+  \end{itemize}
+\end{itemize}
+
+
+So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set.
+
+
+The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
+\begin{itemize}
+  \item The set of 2 x 2 real matrices can be written:
+        \[ \{\begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix} : a, b, c, d \in \mathbb{R}\}. \]
+  \item The xy-plane represents the set of \emph{ordered pairs} of real numbers. This set can be written:
+        \[ \mathbb{R}^2 = \{(x,y) : x \in \mathbb{R} \text{ and } y \in \mathbb{R}\}.  \]
+  \item The unit circle, which is a circle of radius 1 centered at the origin, is contained inside of $\mathbb{R}^2$ and can be defined as:
+        \[ \mathbb{S}^1 = \{(x,y) \in \mathbb{R} : x^2 + y^2 = 1\}.  \]
+  \item The closed interval [a,b] can be defined as follows:
+        \[ [a,b] = \{x \in \mathbb{R} : a \le x \le b\}.  \]
+  \item The open interval (x,y) can be defined as:
+        \[ (a,b) = \{x \in \mathbb{R} : a < x < b\}. \]
+        This applies even if $a = -\infty$ and/or $b = \infty$. The definitions for the half open intervals, (a,b] and [a, b), are similar. Also note that the           open interval notation (a,b) is the same as an ordered pair, so it will be determined which is which from context.
+\end{itemize}
+
+
+\section{Proving A $\subseteq$ B}
+
+
+\end{document}
