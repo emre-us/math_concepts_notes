@@ -1,1 +1,1 @@
-# proofs_real_analysis_notes
+# Math Concepts for Static Optimisation
