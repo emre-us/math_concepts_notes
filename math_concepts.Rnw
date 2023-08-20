@@ -1,70 +1,107 @@
-\documentclass{report}
+% PREAMBLE
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{tabularx}
+\documentclass{amsart} %amsart is short for American Mathematical Society article.
 
+% \thispagestyle{empty} %We use this to prevent a page number from appearing.
+
+\usepackage{amsmath, amssymb, tabularx, multirow, multicol} %amsmath for the equation* environment
+\usepackage{amsthm} % for proofs
 
 \title{Math Concepts for Econ Tripos 2A Paper 6}
 \author{Emre Usenmez\thanks{Gonville \verb|&| Caius College}}
 \date{August 2023}
 
+%For proofs
+\newtheorem{thm}{Theorem} % This is called a 'proclamation.'% The first argument is the environment name. The second is what will be typeset. You can also use this for lemmas, corollaries, definitions, and so on. The theorems will be numbered consecutively: 1, 2, 3, ...
+
+\theoremstyle{definition} % This changes the style from 'plain' (the default) for the next proclamation.
+\newtheorem*{dfn}{Definition} % As in the align environment, the asterisk here suppresses the numbering.
+
+\theoremstyle{proposition} % And this changes the style to 'proposition' as an option.
+\newtheorem*{prpn}{Proposition}
+
+\theoremstyle{remark} % And this changes the style to 'remark' as an option.
+\newtheorem*{note}{Note}
+
+
+
+
+
+% DOCUMENT
+
 \begin{document}
 \SweaveOpts{concordance=TRUE}
+% To force a page break at any place in your document, you can use \pagebreak or \newpage.
 
-\chapter{Sets}
+\begin{center}
+      \textbf{Topic One: Sets}
+\end{center}
+
+
+
+
 
 \section{Definitions}
 
-If $x$ is an element of a set $S$, we write $x \in S$. This is read "$x$ in $S$".
+\begin{dfn}
+\boxed{\in} \quad If $x$ is an element of a set $S$, we write $x \in S$. This is read "$x$ in $S$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
+\end{dfn}
 
-\begin{itemize}
-  \item The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\} \footnote{Note that it does not include 0.} For e.g.,
-  \begin{itemize}
-    \item $\{n^2:n \in \mathbb{N} \} = \{1, 4, 9, 16, 25, \dots\}$
-    \item $\{n \in \mathbb{N} : 6|n\} = \{6, 12, 18, 24, 30, \dots\}$
-  \end{itemize}
+\begin{dfn}
+\boxed{\mathbb{N}} \quad The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\} \footnote{Note that it does not include 0.} For e.g.,
+    \begin{itemize}
+          \item $\{n^2:n \in \mathbb{N} \} = \{1, 4, 9, 16, 25, \dots\}$
+          \item $\{n \in \mathbb{N} : 6|n\} = \{6, 12, 18, 24, 30, \dots\}$
+    \end{itemize}
+\end{dfn}
 
-  \item The set of \emph{integers}, denoted $\mathbb{Z}$ is the set \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}. For e.g.,
-  \begin{itemize}
-    \item $\{|n|:n \in \mathbb{Z} \} = \{0, 1, 2, 3, \dots\}$
-    \item $\{n \in \mathbb{Z}: n is even\} = \{\dots, -6, -4, -2, 0, 2, 4, 6, \dots \}$
-  \end{itemize}
+\begin{dfn}
+\boxed{\mathbb{Z}} \quad The set of \emph{integers}, denoted $\mathbb{Z}$ is the set \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}. For e.g.,
+    \begin{itemize}
+          \item $\{|n|:n \in \mathbb{Z} \} = \{0, 1, 2, 3, \dots\}$
+          \item $\{n \in \mathbb{Z}: n\ is\ even\} = \{\dots, -6, -4, -2, 0, 2, 4, 6, \dots \}$ % putting '\' after 'n' and 'is' creates a small horizontal space. Without it the printout would be 'niseven'
+    \end{itemize}
+\end{dfn}
 
-  \item The set of \emph{rational numbers}, denoted $\mathbb{Q}$ is the set $\{\frac{a}{b}: a,b \in \mathbb{Z}, b \neq 0 \}$
-  \begin{itemize}
-    \item This can be read as the following:
-          \begin{center}
-          \begin{tabularx}{0.95\textwidth}{ % table width is set to 0.8\textwidth, which is 95% of the document's text width.
-            | >{\centering\arraybackslash}X % sets the alignment of each column. Instead of \centering it can be \raggedleft or \raggedright
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X
-            | >{\centering\arraybackslash}X | }
-            $\mathbb{Q}$ & = & \{ & $\frac{a}{b}$ & : & $a,b \in \mathbb{Z}$ & , & $b \neq 0\}$ \\
-            \hline
-            The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
-          \end{tabularx}
-          \end{center}
-  \end{itemize}
-\end{itemize}
+\begin{dfn}
+\boxed{\mathbb{Q}} \quad The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is the set $\mathbb{Q} = \{\frac{a}{b}: a,b \in \mathbb{Z}, b \neq 0 \}$ \\
+This can be read as the following:
+    \begin{center}
+    \begin{tabularx}{0.95\textwidth}{ % table width is set to 0.95\textwidth, which is 95% of the document's text width.
+      | >{\centering\arraybackslash}X % sets the alignment of each column. Instead of \centering it can be \raggedleft or \raggedright
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X
+      | >{\centering\arraybackslash}X | }
+      $\mathbb{Q}$ & = & \{ & $\frac{a}{b}$ & : & $a,b \in \mathbb{Z}$ & , & $b \neq 0\}$ \\
+      \hline
+      The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
+    \end{tabularx}
+    \end{center}
+\end{dfn}
 
+% here we could use tabular instead of tabularx but it would run longer than the page width. tabularx is easier to adjust for that.
+% \begin{tabular}{c | c | c | c | c | c | c | c } % Each letter (c, r, or l) represents a column. They stand for centered, right-justified, and left-justified. Each | draws a vertical line separating the columns.
+% $\mathbb{Q}$ & = & \{ & $\frac{a}{b}$ & : & $a,b \in \mathbb{Z}$ & , & $b \neq 0\}$ \\
+% \hline
+% The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
+% \end{tabular}
 
-So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set.
-
+So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set. \\ % The \\ at the end creates additional vertical space between lines.
 
 The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
+
 \begin{itemize}
   \item The set of 2 x 2 real matrices can be written:
-        \[ \{\begin{bmatrix}
+        $$ \left\{\begin{bmatrix}
               a & b \\
               c & d
-            \end{bmatrix} : a, b, c, d \in \mathbb{R}\}. \]
+            \end{bmatrix} : a, b, c, d \in \mathbb{R}\right\}. $$ % The double dollar signs ($$) open and close the displayed math environment. This is the same as the '\[ \{...\} \] structure. The function \displaystyle can also be used to keep the functions in the same line as the text but not in small font. % commands '\left' and '\right' makes the '{}' as large as the text/matrix.
   \item The xy-plane represents the set of \emph{ordered pairs} of real numbers. This set can be written:
-        \[ \mathbb{R}^2 = \{(x,y) : x \in \mathbb{R} \text{ and } y \in \mathbb{R}\}.  \]
+        \[ \mathbb{R}^2 = \{(x,y) : x \in \mathbb{R} \text{ and } y \in \mathbb{R}\}. \]
   \item The unit circle, which is a circle of radius 1 centered at the origin, is contained inside of $\mathbb{R}^2$ and can be defined as:
         \[ \mathbb{S}^1 = \{(x,y) \in \mathbb{R} : x^2 + y^2 = 1\}.  \]
   \item The closed interval [a,b] can be defined as follows:
@@ -75,7 +112,136 @@ The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it
 \end{itemize}
 
 
+
+
+
+
+
+
+
+
 \section{Proving A $\subseteq$ B}
+
+\begin{dfn}
+\boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$.
+\end{dfn}
+
+In order to prove this we will have to show that if $x \in A$ then $x \in B$. So, here is an outline for a direct proof that a set $A$ is a subset of a set $B$:
+
+\begin{prpn}
+Suppose $A$ and $B$ are sets. It is the case that \footnote{It is advised to start a sentence with words and not mathematical notation} $A \subseteq B$
+\end{prpn}
+
+\begin{proof}
+Assume $x \in A$
+
+      \begin{center}
+            \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright
+      \end{center}
+
+      \begin{center}
+      \begin{tabular}{r l}
+            \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\ %using multirow, multicol package we drew a huge updownarrow in the left column
+            & apply logic \\
+            & apply techniques \\
+      \end{tabular}
+      \end{center}
+
+      \begin{center}
+            \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright
+      \end{center}
+
+      Therefore $x \in B$.
+
+      Since $x \in A$ implies that $x \in B$, it follows that $A \subseteq B$.
+
+\end{proof}
+
+\smallskip
+Let's apply this set-up to a proposition where one set is in another:
+
+\begin{prpn}
+It is the case that \[ \{n \in \mathbb{Z} : 12 | n \} \subseteq \{n \in \mathbb{Z}: 3 | n \} \]
+\end{prpn}
+
+\smallskip
+\begin{note}
+Before writing the proof we need to do some scratch work. Here we can we can write out few of the terms to see what we are dealing with. This may also be helpful in finding a proof.
+\end{note}
+
+\textbf{Scratch Work.} Lets write some terms of the first set: \[ \{n \in \mathbb{Z} : 12|n \} = \{\dots,-24, -12, 0, 12, 24, \dots \}. \] and for the second set: \[ \{n \in \mathbb{Z}:3|n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
+So based on this, it seems to be that the elements in the first set are in the second set as well. To write this as a proof, we will use the outline of what a proof looks like above. To start, we need to find an explanation for \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright. For that, we can rely on the following definition for what it means to say "$12 | x$":
+
+\begin{dfn}
+\boxed{a|b} \quad A nonzero integer $a$ is said to divide an integer $b$ if $b = ak$ for some integer $k$. When $a$ divides $b$, we write "$a | b$" and when a does not divide b we write "$a \nmid b$."
+\end{dfn}
+
+We can now use this in our proof. Remember, based on our outline we start off by stating "Assume $x \in A$" and then explain what that means:
+
+\begin{proof}
+      Assume $\underbrace{x \in \{n \in \mathbb{Z}: 12|n \}}_{x \in A}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., 12|x. By the definition of "a|b", this means $x=12k$ for some $k \in \mathbb{Z}$.
+
+      \begin{center}
+      \begin{tabular}{r l}
+            \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\ %using multirow, multicol package we drew a huge updownarrow in the left column
+            & apply logic \\
+            & apply techniques \\
+      \end{tabular}
+      \end{center}
+
+      \begin{center}
+      \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright
+      \end{center}
+
+      Therefore, $\underbrace{x \in \{n \in \mathbb{Z} : 3|n \}}_{x \in B}$ (This is us saying: "Therefore, $x \in B$").
+
+      Since $\overbrace{x \in\{n \in \mathbb{Z}: 12|n \}}^{x \in A}$ implies that $\overbrace{x \in \{n \in \mathbb{Z} : 3|n \}}^{x \in B}$, it follows that \\ $\overbrace{\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}}^{A \subseteq B}$
+
+\end{proof}
+
+Before we look at $\updownarrow$ segment of the proof, lets briefly discuss the \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright part. We need to show that, by the definition above, 3 also divides $x$, i.e., $3|x$, so that x can also be an element of the second set, i.e. set $B$. If 3 does divide $x$ then, by the definition again, x must equal to $3m$ for some integer m. We can add this to our proof:
+
+\begin{proof}
+      Assume $x \in \{n \in \mathbb{Z}: 12|n \}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12|x$. By the definition of "$a | b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
+
+      \begin{center}
+      \begin{tabular}{r l}
+            \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\ %using multirow, multicol package we drew a huge updownarrow in the left column
+            & apply logic \\
+            & apply techniques \\
+      \end{tabular}
+      \end{center}
+
+      Therefore, $x = 3m$ for some $m \in \mathbb{Z}$. Thus, by the definition of "$a | b$", this means $3 | x$.
+
+      Therefore, $x \in \{n \in \mathbb{Z} : 3|n \}$
+
+      Since $x \in\{n \in \mathbb{Z}: 12|n \}$ implies that $x \in \{n \in \mathbb{Z} : 3|n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}$
+
+\end{proof}
+
+Now, we can tackle the $\updownarrow$ segment. We said $x = 12k$ and $x = 3m$ for some $k, m \in \mathbb{Z}$. Thus $12k = 3m$ or $4k = m$. Since $k \in \mathbb{Z}$ so is $4k$. Lets plug this in to our proof:
+
+\begin{proof}
+      Assume $x \in \{n \in \mathbb{Z}: 12|n \}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12|x$. By the definition of divisibility, "$a | b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
+
+      Equivalently, $x = 3\cdot(4k)$.
+      And since $k \in \mathbb{Z}$, it is also true that $4k \in \mathbb{Z}$. Thus, by the definition of divisibility, "$a | b$", this means 3 also divides $x$, i.e., $3 | x$. So, $x \in \{n \in \mathbb{Z} : 3|n \}$
+
+      Since $x \in\{n \in \mathbb{Z}: 12|n \}$ implies that $x \in \{n \in \mathbb{Z} : 3|n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}$
+
+\end{proof}
+
+Thus concludes our first (direct) proof!
+
+\begin{note}
+It is common to conclude the proofs with the symbol \qedsymbol\ or $\blacksquare$ which symbolises \emph{quod erat demonstrandum} meaning "what was to be shown."
+\end{note}
+
+
 
 
 \end{document}
