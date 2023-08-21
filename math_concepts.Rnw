@@ -39,12 +39,15 @@
 
 
 
-
-
-\section{Definitions}
+\section{\textbf{Basics}}
+\subsection{\underline{Definitions}}
 
 \begin{dfn}
-\boxed{\in} \quad If $x$ is an element of a set $S$, we write $x \in S$. This is read "$x$ in $S$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
+\boxed{\in} \quad If $x$ is an element of a set $A$, we write $x \in A$. This is read "$x$ in $A$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
+\end{dfn}
+
+\begin{dfn}
+\boxed{\not\in} \quad If $x$ is not an element of a set B "$x \not\in B$" means that $x$ is not an element of $B$.
 \end{dfn}
 
 \begin{dfn}
@@ -92,35 +95,38 @@ This can be read as the following:
 
 So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set. \\ % The \\ at the end creates additional vertical space between lines.
 
-The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
+\begin{dfn}
+\boxed{\mathbb{R}} \quad The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
 
-\begin{itemize}
-  \item The set of 2 x 2 real matrices can be written:
-        $$ \left\{\begin{bmatrix}
-              a & b \\
-              c & d
-            \end{bmatrix} : a, b, c, d \in \mathbb{R}\right\}. $$ % The double dollar signs ($$) open and close the displayed math environment. This is the same as the '\[ \{...\} \] structure. The function \displaystyle can also be used to keep the functions in the same line as the text but not in small font. % commands '\left' and '\right' makes the '{}' as large as the text/matrix.
-  \item The xy-plane represents the set of \emph{ordered pairs} of real numbers. This set can be written:
-        \[ \mathbb{R}^2 = \{(x,y) : x \in \mathbb{R} \text{ and } y \in \mathbb{R}\}. \]
-  \item The unit circle, which is a circle of radius 1 centered at the origin, is contained inside of $\mathbb{R}^2$ and can be defined as:
-        \[ \mathbb{S}^1 = \{(x,y) \in \mathbb{R} : x^2 + y^2 = 1\}.  \]
-  \item The closed interval [a,b] can be defined as follows:
-        \[ [a,b] = \{x \in \mathbb{R} : a \le x \le b\}.  \]
-  \item The open interval (x,y) can be defined as:
-        \[ (a,b) = \{x \in \mathbb{R} : a < x < b\}. \]
-        This applies even if $a = -\infty$ and/or $b = \infty$. The definitions for the half open intervals, (a,b] and [a, b), are similar. Also note that the           open interval notation (a,b) is the same as an ordered pair, so it will be determined which is which from context.
-\end{itemize}
+    \begin{itemize}
+      \item The set of 2 x 2 real matrices can be written:
+            $$ \left\{\begin{bmatrix}
+                  a & b \\
+                  c & d
+                \end{bmatrix} : a, b, c, d \in \mathbb{R}\right\}. $$ % The double dollar signs ($$) open and close the displayed math environment. This is the same as the '\[ \{...\} \] structure. The function \displaystyle can also be used to keep the functions in the same line as the text but not in small font. % commands '\left' and '\right' makes the '{}' as large as the text/matrix.
+      \item The xy-plane represents the set of \emph{ordered pairs} of real numbers. This set can be written:
+            \[ \mathbb{R}^2 = \{(x,y) : x \in \mathbb{R} \text{ and } y \in \mathbb{R}\}. \]
+      \item The unit circle, which is a circle of radius 1 centered at the origin, is contained inside of $\mathbb{R}^2$ and can be defined as:
+            \[ \mathbb{S}^1 = \{(x,y) \in \mathbb{R} : x^2 + y^2 = 1\}.  \]
+      \item The closed interval [a,b] can be defined as follows:
+            \[ [a,b] = \{x \in \mathbb{R} : a \le x \le b\}.  \]
+      \item The open interval (x,y) can be defined as:
+            \[ (a,b) = \{x \in \mathbb{R} : a < x < b\}. \]
+            This applies even if $a = -\infty$ and/or $b = \infty$. The definitions for the half open intervals, (a,b] and [a, b), are similar. Also note that the           open interval notation (a,b) is the same as an ordered pair, so it will be determined which is which from context.
+    \end{itemize}
 
-
-
-
-
+\end{dfn}
 
 
 
 
 
-\section{Proving A $\subseteq$ B}
+
+
+
+\bigskip \bigskip \bigskip
+
+\subsection{\underline{Proving $A \subseteq B$}}
 
 \begin{dfn}
 \boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$.
@@ -164,12 +170,12 @@ Let's apply this set-up to a proposition where one set is in another:
 It is the case that \[ \{n \in \mathbb{Z} : 12 | n \} \subseteq \{n \in \mathbb{Z}: 3 | n \} \]
 \end{prpn}
 
-\smallskip
+\medskip
 \begin{note}
 Before writing the proof we need to do some scratch work. Here we can we can write out few of the terms to see what we are dealing with. This may also be helpful in finding a proof.
 \end{note}
 
-\textbf{Scratch Work.} Lets write some terms of the first set: \[ \{n \in \mathbb{Z} : 12|n \} = \{\dots,-24, -12, 0, 12, 24, \dots \}. \] and for the second set: \[ \{n \in \mathbb{Z}:3|n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
+\noindent \textbf{Scratch Work.} Lets write some terms of the first set: \[ \{n \in \mathbb{Z} : 12|n \} = \{\dots,-24, -12, 0, 12, 24, \dots \}. \] and for the second set: \[ \{n \in \mathbb{Z}:3|n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
 So based on this, it seems to be that the elements in the first set are in the second set as well. To write this as a proof, we will use the outline of what a proof looks like above. To start, we need to find an explanation for \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright. For that, we can rely on the following definition for what it means to say "$12 | x$":
 
 \begin{dfn}
@@ -241,6 +247,171 @@ Thus concludes our first (direct) proof!
 It is common to conclude the proofs with the symbol \qedsymbol\ or $\blacksquare$ which symbolises \emph{quod erat demonstrandum} meaning "what was to be shown."
 \end{note}
 
+\bigskip
+\bigskip
+
+Now, lets try another proof, this time not as a direct proof but by case.
+
+\begin{prpn}
+Let $A = \{-1,3\}$ and $B = \{x \in \mathbb{R}: x^3 - 3x^2 - x + 3 = 0  \} $. Then $A \subseteq B$
+\end{prpn}
+
+\begin{note}
+Don't forget, for proof what we are trying to show is that if $x \in A$ then $x \in B$.
+\end{note}
+
+\noindent \textbf{Scratch Work.} For $x \in A$, $x$ can take one of two values only --- either -1 or 3. So we can take each of those values as a separate case. In each of those cases we need to show $x \in B$. That means, we need to show that in each case $x$ satisfies $x^3 - 3x^2 - x + 3 = 0$.
+
+\begin{proof}
+      Assume $x \in A$. Then either $x = -1$ or $x = 3$. Consider the two cases separately. \\
+    \begin{center}
+      \begin{tabular}{l l}
+            \underline{Case 1: $x = -1$}. & Note that $x$ is a real number, and \\
+            & $(-1)^3 - 3(-1)^2 - (-1) + 3 = -1 - 3 + 1 + 3 = 0$ \\
+            & which by definition of $B$ implies $x \in B$. \\
+
+            \underline{Case 2: $x = 3$}. & Note that $x$ is a real number, and \\
+            & $(3)^3 - 3(3)^2 - (3) + 3 = 27 - 27 - 3 + 3 = 0$ \\
+            & which by definition implies $x \in B$.
+      \end{tabular}
+    \end{center}
+      Since $x \in A$ implies that $x \in B$, it follows that $A \subseteq B$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip \bigskip
+
+\subsection{\underline{Proving $A = B$}}.
+
+\noindent Since the two sets contain exactly the same elements, this means that not only every element in $A$ is also in $B$ but also every element in $B$ is in $A$. This may come across as tautology but this is a way to proove that $A = B$ by showing that $A \subseteq B$ and $B \subseteq A$. This gives an indication to the outline of a proof. We already showed how to prove $A \subseteq B$ above, so the outline will be very similar:
+
+\begin{prpn}
+      It is the case that $A = B$.
+\end{prpn}
+
+\begin{proof}
+      Assume $x \in A$
+
+            \begin{center}
+                  \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright
+            \end{center}
+
+            \begin{center}
+            \begin{tabular}{r l}
+                  \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\
+                  & apply logic \\
+                  & apply techniques \\
+            \end{tabular}
+            \end{center}
+
+            \begin{center}
+                  \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright
+            \end{center}
+
+            Therefore $x \in B$.
+
+            Since $x \in A$ implies that $x \in B$, it follows that $A \subseteq B$.
+
+            \bigskip
+
+            Next, assume $x \in B$
+
+            \begin{center}
+                  \guillemotleft\ An explanation of what $ x \in B$ means \guillemotright
+            \end{center}
+
+            \begin{center}
+            \begin{tabular}{r l}
+                  \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\
+                  & apply logic \\
+                  & apply techniques \\
+            \end{tabular}
+            \end{center}
+
+            \begin{center}
+                  \guillemotleft\ Oh hey look, that's what $x \in A$ means \guillemotright
+            \end{center}
+
+            Therefore $x \in B$.
+
+            Since $x \in B$ implies that $x \in A$, it follows that $A \subseteq B$.
+
+
+            We have shown that $A \subseteq B$ and $B \subseteq A$. Therefore, $A = B$.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip \bigskip
+
+\section{\textbf{Set Operations}}
+
+\subsection{\underline{Definitions}}
+
+\begin{dfn}
+      \boxed{\cup} \quad The \emph{union} of sets $A$ and $B$ is the set $A \cup B = \{x : x \in A$ or $x \in B \}$.
+            \begin{itemize}
+                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the union of all of them is the set $A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n = \{x : x \in A_i \text{for \underline{some}}\ i \} $. This set is also denoted:
+                        \[\bigcup^n_{i=1}A_i = A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n \]
+            \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+      \boxed{\cap} \quad The \emph{intersection} of sets $A$ and $B$ is the set $A \cap B = \{x : x \in A$ and $x \in B \}$.
+            \begin{itemize}
+                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the intersection of all of them is the set $A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n = \{x : x \in A_i \text{for \underline{all}}\ i \} $. This set is also denoted:
+                        \[\bigcap^n_{i=1}A_i = A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n \]
+            \end{itemize}
+\end{dfn}
+
+
+Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesian product} which are analogous to the operations of addition, subtraction, and multiplications for numbers. Also, just as taking the absolute value of a number tells you how big it is, in set theory one can determine a set's \emph{cardinality}. These are discussed below. \\
+
+
+
+
+
+
+
+
+
+
+\subsection{\underline{Subtraction and Complements}}
+
+\begin{dfn}
+\boxed{\setminus} \quad The \emph{subtraction} of $B$ from $A$ is $A \setminus B = \{x: x \in A \text{ and } x \not\in B \}$. % \setminus command is in amssym package
+\end{dfn}
+
+\begin{dfn}
+\boxed{$U$} \quad If $A \subseteq U$ then $U$ is called a \emph{universal set} of $A$.
+\end{dfn}
+
+\begin{dfn}
+\boxed{A^c} \quad The \emph{complement} of $A$ in $U$ is $A^c = U \setminus A$.
+\end{dfn}
 
 
 
