@@ -4,8 +4,11 @@
 
 % \thispagestyle{empty} %We use this to prevent a page number from appearing.
 
-\usepackage{amsmath, amssymb, tabularx, multirow, multicol} %amsmath for the equation* environment
-\usepackage{amsthm} % for proofs
+\usepackage{amsmath, amssymb, amsthm, tabularx, multirow, multicol, tikz, venndiagram} %amsmath for the equation* environment, amsthm for proofs, tikz for drawing figures. A good TiKz manual: http://cremeronline.com/LaTeX/minimaltikz.pdf ; and lots of TiKz examples: http://www.texample.net/ ; venndiagram requires tikz package
+\usepackage{fullpage} % This changes the default LaTeX margins, which are quite large, replacing them with more standard margins.
+\usepackage{graphicx} % Allows us access to graphics package.
+
+\renewcommand{\baselinestretch}{1.15} % This allows you to change line spacing. For instance, a "2" in the braces means to double-space the document.
 
 \title{Math Concepts for Econ Tripos 2A Paper 6}
 \author{Emre Usenmez\thanks{Gonville \verb|&| Caius College}}
@@ -40,8 +43,8 @@
 
 
 
-\section{\textbf{Basics}}
-\subsection{\underline{Definitions}}
+\section{\textbf{Definitions}}
+
 
 \begin{dfn}
 \boxed{\in} \quad If $x$ is an element of a set $A$, we write $x \in A$. This is read "$x$ in $A$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
@@ -94,7 +97,7 @@ This can be read as the following:
 % The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
 % \end{tabular}
 
-So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set. \\ % The \\ at the end creates additional vertical space between lines.
+So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set.
 
 \begin{dfn}
 \boxed{\mathbb{R}} \quad The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
@@ -118,20 +121,131 @@ So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{
 
 \end{dfn}
 
-
-
-
-
-
-
-
-\bigskip \bigskip \bigskip
-
-\subsection{\underline{Proving $A \subseteq B$}}
-
 \begin{dfn}
 \boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$.
 \end{dfn}
+
+\begin{dfn}
+      \boxed{\cup} \quad The \emph{union} of sets $A$ and $B$ is the set $A \cup B = \{x : x \in A$ or $x \in B \}$.
+            \begin{itemize}
+                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the union of all of them is the set $A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n = \{x : x \in A_i \text{for \underline{some}}\ i \} $. This set is also denoted:
+                        \[\bigcup^n_{i=1}A_i = A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n \]
+            \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+      \boxed{\cap} \quad The \emph{intersection} of sets $A$ and $B$ is the set $A \cap B = \{x : x \in A$ and $x \in B \}$.
+            \begin{itemize}
+                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the intersection of all of them is the set $A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n = \{x : x \in A_i \text{for \underline{all}}\ i \} $. This set is also denoted:
+                        \[\bigcap^n_{i=1}A_i = A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n \]
+            \end{itemize}
+\end{dfn}
+
+
+Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesian product} which are analogous to the operations of addition, subtraction, and multiplications for numbers. Also, just as taking the absolute value of a number tells you how big it is, in set theory one can determine a set's \emph{cardinality}. These are discussed below.
+
+
+\begin{dfn}
+\boxed{U} \quad If $A \subseteq U$ then $U$ is called a \emph{universal set} of $A$.
+\end{dfn}
+
+\begin{dfn}
+\boxed{\setminus} \quad The \emph{subtraction} of $B$ from $A$ when both are in $U$ is $A \setminus B = \{x: x \in A \text{ and } x \not\in B \}$. % \setminus command is in amssym package
+\end{dfn}
+
+\begin{center}
+\begin{tabular}{c}
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillOnlyA
+      \end{venndiagram2sets} \\
+      $A \setminus B$
+\end{tabular}
+\end{center}
+
+\begin{dfn}
+\boxed{A^c} \quad The \emph{complement} of $A$ in $U$ is $A^c = U \setminus A$.
+\end{dfn}
+
+\begin{center}
+\begin{tabular}{c}
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillNotA
+      \end{venndiagram2sets} \\
+      $A^c$
+\end{tabular}
+\end{center}
+
+\begin{dfn}
+\boxed{\mathcal{P}(A)} The \emph{power set} of $A$ is $\mathcal{P}(A) = \{X : X \subseteq A \}$ where every element of $\mathcal{P}(A)$ is a set itself, just like a box can contain other boxes. What the definition is saying is that if $X$ is a subset of $A$, then $X$ is an element of $\mathcal{P}(A)$.
+      \begin{itemize}
+            \item Here is an example: If $A = \{1, 3, 5 \}$ then the power set is \\
+                  $\mathcal{P}(A) = \{ \{\emptyset \}, \{1\}, \{3\}, \{5\}. \{1, 3\}, \{1, 5\}, \{3, 5\}, \{1, 3, 5 \} \}$
+            \item Here is another example: $\mathcal{P}(\emptyset) = \{\emptyset \} \\
+                  \mathcal{P}(\mathcal{P}(\emptyset)) = \{\emptyset, \{\emptyset \} \}  \\
+                  \mathcal{P}(\mathcal{P}(\mathcal{P}(\emptyset))) = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}, \{\{\emptyset\}\} \} $
+      \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+\boxed{|A|} \quad The \emph{cardinality} of $A$ is the number of elements in $A$.
+      \begin{itemize}
+            \item Here is an example: If $A = \{1, 3, 5 \}$ then $|A|$ is 3 and $|\mathcal {P}(A)| = 8 = 2^3 $.
+      \end{itemize}
+\end{dfn}
+
+\begin{dfn}
+\boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A and b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
+      \begin{itemize}
+            \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\omega, \Omega \} $ then \\
+                  $A \times B = \{(1, \omega), (1, \Omega), (3, \omega), (3, \Omega), (5, \omega), (5, \Omega) \} $. \\
+                  These elements can be generated via table too:
+                  \begin{tabular}{c | c | c | c}
+                        & 1 & 3 & 5 \\
+                        \hline
+                        $\omega$ & $(1, \omega)$ & $(3, \omega)$ & $(5, \omega)$ \\
+                        $\Omega$ & $(1, \Omega)$ & $(3, \Omega)$ & $(5, \Omega)$ \\
+                  \end{tabular} \\
+                  If $\omega = \frac{1}{2}$ and $\Omega = \frac{3}{2}$ then we can have Cartesian coordinates as well: \\
+
+                  \begin{tikzpicture}
+                        \draw[<->, rounded corners, thick] (0,2) -- (0,0) -- (5, 0);
+                        \draw[help lines] (0, 0) grid (5, 2);
+                        \draw[fill = lightgray] (1, 0.5) circle [radius = 0.05];
+                        \node [right] at (1, 0.5) {(1, $\frac{1}{2}$)};
+                        \draw[fill = lightgray] (3, 0.5) circle [radius = 0.05];
+                        \node [right] at (3, 0.5) {(3, $\frac{1}{2}$)};
+                        \draw[fill = lightgray] (5, 0.5) circle [radius = 0.05];
+                        \node [right] at (5, 0.5) {(5, $\frac{1}{2}$)};
+                        \draw[fill = lightgray] (1, 1.5) circle [radius = 0.05];
+                        \node [right] at (1, 1.5) {(1, $\frac{3}{2}$)};
+                        \draw[fill = lightgray] (3, 1.5) circle [radius = 0.05];
+                        \node [right] at (3, 1.5) {(3, $\frac{3}{2}$)};
+                        \draw[fill = lightgray] (5, 1.5) circle [radius = 0.05];
+                        \node [right] at (5, 1.5) {(5, $\frac{3}{2}$)};
+                  \end{tikzpicture}
+
+      \end{itemize}
+\end{dfn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip \bigskip \bigskip
+
+\section{\textbf{Proofs}}
+
+\subsection{\underline{Proving $A \subseteq B$}}
+
+\bigskip
 
 In order to prove this we will have to show that if $x \in A$ then $x \in B$. So, here is an outline for a direct proof that a set $A$ is a subset of a set $B$:
 
@@ -288,6 +402,8 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 
 
+
+
 \bigskip \bigskip \bigskip \bigskip
 
 \subsection{\underline{Proving $A = B$}}.
@@ -361,59 +477,8 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 
 
-
-
-
-
-
 \bigskip \bigskip \bigskip \bigskip
 
-\section{\textbf{Set Operations}}
-
-\subsection{\underline{Definitions}}
-
-\begin{dfn}
-      \boxed{\cup} \quad The \emph{union} of sets $A$ and $B$ is the set $A \cup B = \{x : x \in A$ or $x \in B \}$.
-            \begin{itemize}
-                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the union of all of them is the set $A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n = \{x : x \in A_i \text{for \underline{some}}\ i \} $. This set is also denoted:
-                        \[\bigcup^n_{i=1}A_i = A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n \]
-            \end{itemize}
-\end{dfn}
-
-\begin{dfn}
-      \boxed{\cap} \quad The \emph{intersection} of sets $A$ and $B$ is the set $A \cap B = \{x : x \in A$ and $x \in B \}$.
-            \begin{itemize}
-                  \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the intersection of all of them is the set $A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n = \{x : x \in A_i \text{for \underline{all}}\ i \} $. This set is also denoted:
-                        \[\bigcap^n_{i=1}A_i = A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n \]
-            \end{itemize}
-\end{dfn}
-
-
-Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesian product} which are analogous to the operations of addition, subtraction, and multiplications for numbers. Also, just as taking the absolute value of a number tells you how big it is, in set theory one can determine a set's \emph{cardinality}. These are discussed below. \\
-
-
-
-
-
-
-
-
-
-
-\subsection{\underline{Subtraction and Complements}}
-
-\begin{dfn}
-\boxed{\setminus} \quad The \emph{subtraction} of $B$ from $A$ is $A \setminus B = \{x: x \in A \text{ and } x \not\in B \}$. % \setminus command is in amssym package
-\end{dfn}
-
-\begin{dfn}
-\boxed{$U$} \quad If $A \subseteq U$ then $U$ is called a \emph{universal set} of $A$.
-\end{dfn}
-
-\begin{dfn}
-\boxed{A^c} \quad The \emph{complement} of $A$ in $U$ is $A^c = U \setminus A$.
-\end{dfn}
-
-
+\subsection{\underline{Proving $ \mathcal{P}(A) \subseteq \mathcal{P}(B) \implies A \subseteq B$}}.
 
 \end{document}
