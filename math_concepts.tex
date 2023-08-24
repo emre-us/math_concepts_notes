@@ -11,7 +11,8 @@
 \renewcommand{\baselinestretch}{1.15} % This allows you to change line spacing. For instance, a "2" in the braces means to double-space the document.
 
 \title{Math Concepts for Econ Tripos 2A Paper 6}
-\author{Emre Usenmez\thanks{Gonville \verb|&| Caius College}}
+\author{Emre Usenmez}
+\thanks{Gonville \verb|&| Caius College. These notes made liberal use of Prof Jay Cummings' book 'Proofs'.}
 \date{August 2023}
 
 %For proofs
@@ -158,12 +159,12 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
       \begin{venndiagram2sets} [labelNotAB = $U$]
       \fillOnlyA
       \end{venndiagram2sets} \\
-      $A \setminus B$
+      \boxed{A \setminus B}
 \end{tabular}
 \end{center}
 
 \begin{dfn}
-\boxed{A^c} \quad The \emph{complement} of $A$ in $U$ is $A^c = U \setminus A$.
+\boxed{A^\complement} \quad The \emph{complement} of $A$ in $U$ is $A^\complement = U \setminus A$.
 \end{dfn}
 
 \begin{center}
@@ -171,7 +172,7 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
       \begin{venndiagram2sets} [labelNotAB = $U$]
       \fillNotA
       \end{venndiagram2sets} \\
-      $A^c$
+      \boxed{A^\complement}
 \end{tabular}
 \end{center}
 
@@ -191,21 +192,24 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
       \begin{itemize}
             \item Here is an example: If $A = \{1, 3, 5 \}$ then $|A|$ is 3 and $|\mathcal {P}(A)| = 8 = 2^3 $.
       \end{itemize}
+      \begin{note}
+            Note that he cardinality of $\mathbb{N}$ is referred to as $\aleph_0$, which is read "aleph naught".
+      \end{note}
 \end{dfn}
 
 \begin{dfn}
 \boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A and b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
       \begin{itemize}
-            \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\omega, \Omega \} $ then \\
-                  $A \times B = \{(1, \omega), (1, \Omega), (3, \omega), (3, \Omega), (5, \omega), (5, \Omega) \} $. \\
+            \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\alpha, \beta \} $ then \\
+                  $A \times B = \{(1, \alpha), (1, \beta), (3, \alpha), (3, \beta), (5, \alpha), (5, \beta) \} $. \\
                   These elements can be generated via table too:
                   \begin{tabular}{c | c | c | c}
                         & 1 & 3 & 5 \\
                         \hline
-                        $\omega$ & $(1, \omega)$ & $(3, \omega)$ & $(5, \omega)$ \\
-                        $\Omega$ & $(1, \Omega)$ & $(3, \Omega)$ & $(5, \Omega)$ \\
+                        $\alpha$ & $(1, \alpha)$ & $(3, \alpha)$ & $(5, \alpha)$ \\
+                        $\beta$ & $(1, \beta)$ & $(3, \beta)$ & $(5, \beta)$ \\
                   \end{tabular} \\
-                  If $\omega = \frac{1}{2}$ and $\Omega = \frac{3}{2}$ then we can have Cartesian coordinates as well: \\
+                  If $\alpha = \frac{1}{2}$ and $\beta = \frac{3}{2}$ then we can have Cartesian coordinates as well: \\
 
                   \begin{tikzpicture}
                         \draw[<->, rounded corners, thick] (0,2) -- (0,0) -- (5, 0);
@@ -245,7 +249,7 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
 
 \subsection{\underline{Proving $A \subseteq B$}}
 
-\bigskip
+\hfill\\ % The \hfill fills the line with empty space, so that \\ can end this line without an error.
 
 In order to prove this we will have to show that if $x \in A$ then $x \in B$. So, here is an outline for a direct proof that a set $A$ is a subset of a set $B$:
 
@@ -269,7 +273,7 @@ Assume $x \in A$
       \end{center}
 
       \begin{center}
-            \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright
+            \guillemotleft\ Look, that's what $x \in B$ means \guillemotright
       \end{center}
 
       Therefore $x \in B$.
@@ -337,7 +341,7 @@ Before we look at $\updownarrow$ segment of the proof, lets briefly discuss the 
 
       Therefore, $x = 3m$ for some $m \in \mathbb{Z}$. Thus, by the definition of "$a | b$", this means $3 | x$.
 
-      Therefore, $x \in \{n \in \mathbb{Z} : 3|n \}$
+      Therefore, $x \in \{n \in \mathbb{Z} : 3|n \}$.
 
       Since $x \in\{n \in \mathbb{Z}: 12|n \}$ implies that $x \in \{n \in \mathbb{Z} : 3|n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}$
 
@@ -406,9 +410,11 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 \bigskip \bigskip \bigskip \bigskip
 
-\subsection{\underline{Proving $A = B$}}.
+\subsection{\underline{Proving $A = B$}}
 
-\noindent Since the two sets contain exactly the same elements, this means that not only every element in $A$ is also in $B$ but also every element in $B$ is in $A$. This may come across as tautology but this is a way to proove that $A = B$ by showing that $A \subseteq B$ and $B \subseteq A$. This gives an indication to the outline of a proof. We already showed how to prove $A \subseteq B$ above, so the outline will be very similar:
+\hfill\\
+
+ Since the two sets contain exactly the same elements, this means that not only every element in $A$ is also in $B$ but also every element in $B$ is in $A$. This may come across as tautology but this is a way to proove that $A = B$ by showing that $A \subseteq B$ and $B \subseteq A$. This gives an indication to the outline of a proof. We already showed how to prove $A \subseteq B$ above, so the outline will be very similar:
 
 \begin{prpn}
       It is the case that $A = B$.
@@ -477,8 +483,130 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 
 
-\bigskip \bigskip \bigskip \bigskip
+\bigskip \bigskip
 
-\subsection{\underline{Proving $ \mathcal{P}(A) \subseteq \mathcal{P}(B) \implies A \subseteq B$}}.
+\subsection{\underline{Proving $ \mathcal{P}(A) \subseteq \mathcal{P}(B) \implies A \subseteq B$}}
+
+\begin{prpn}
+      Suppose $A$ and $B$ are sets. If $\mathcal{P}(A) \subseteq \mathcal{P}(B)$, then $A \subseteq B$.
+\end{prpn}
+
+This proof will utilise the definitions of a subset and a power set. For the definition of former we said that if every element in $A$ is also an element of $B$ then $A$ is a subset of $B$. For the definition of the latter we said that if $X$ is a subset of $A$, then $X$ is an element of $\mathcal{P}(A)$. Using these definitions we can observe that:
+\begin{itemize}
+      \item If $x \in A$, then $\{x\} \subseteq A$. Conversely, if $\{x\} \subseteq A$ then $x \in A$.
+      \item If $\{x\} \subseteq A$, then $\{x\} \in \mathcal{P}(A)$. Conversely, if $\{x\} \in \mathcal{P}(A)$, then $\{x\} \subseteq A$.
+\end{itemize}
+
+Using these observations we can prove this in two different ways:
+
+\begin{proof}
+      \indent Assume that $A$ and $B$ are sets and $\mathcal{P}(A) \subseteq \mathcal{P}(B)$. Let $x \in A$. \\
+      \indent This implies that $\{x\} \subseteq A$ by the definition of a subset, which itself implies $\{x\} \in \mathcal{P}(A)$ by the definition of a power set. \\
+      \indent Since we assume $\mathcal{P}(A) \subseteq \mathcal{P}(B)$, this means $\{x\} \in \mathcal{P}(B)$ by the definition of a subset. \\
+      \indent By the definitions of a subset and a power set, $\{x\} \in \mathcal{P}(B)$ implies $\{x\} \in \subseteq \mathcal{P}(B)$, which in turn means that $x \in B$. \\
+      \indent This shows that $x \in A$ implies $x \in B$, which means $A \subseteq B$.
+\end{proof}
+
+\noindent An alternative way of prooving would be:
+
+\begin{proof}
+      Assume that $A$ and $B$ are sets and $\mathcal{P}(A) \subseteq \mathcal{P}(B)$. \\
+      \indent Observe that $A \subseteq A$ since $x \in A$ means $x \in A$ which implies $x \subseteq A$, which means that $A \subseteq A$ by the definition of a subset. \\
+      \indent By the definition of a power set, we can see that $A \subseteq A$ means that $A \in \mathcal{P}(A)$. Since we assume $\mathcal{P}(A) \subseteq \mathcal{P}(B)$, then this means $A \in \mathcal{P}(B)$. \\
+      \indent By the definition of a power set, $A \in \mathcal{P}(B)$ means $A \subseteq B$. \\
+      \indent This concludes the (second) proof.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip
+
+\subsection{\underline{\emph{De Morgan's Laws}}}
+
+\begin{thm}
+      Suppose $A$ and $B$ are subsets of of a universal set $U$. Then,
+      \begin{center}
+            $(A \cup B)^\complement = A^\complement \cap B^\complement$ \\
+            $(A \cap B)^\complement = A^\complement \cup B^\complement$.
+      \end{center}
+\end{thm}
+
+
+
+\noindent \textbf{Scratch Work.} We can check these identities using Venn diagrams.
+
+\begin{center}
+\begin{tabular}{c c}
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillNotAorB
+      \end{venndiagram2sets} &
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillNotAorNotB
+      \end{venndiagram2sets} \\
+
+      \boxed{(A \cup B)^\complement} &
+      \boxed{(A \cap B)^\complement} \\
+      & \\
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillNotA
+      \end{venndiagram2sets} &
+      \begin{venndiagram2sets} [labelNotAB = $U$]
+      \fillNotB
+      \end{venndiagram2sets} \\
+
+      \boxed{A^\complement} &
+      \boxed{B^\complement}
+\end{tabular}
+\end{center}
+
+So we can see that the intersection of $A^\complement$ and $B^\complement$ is the complement of the union of $A$ and $B$. Similarly, the union of $A^\complement$ and $B^\complement$ corresponds to the intersection of $A$ and $B$'s complement. The visual confirmation gives us a good intuition. To prove \emph{De Morgan's Laws}, however, we need to utilise the approach used to prove $A = B$ earlier whereby we proved by showing $A \subseteq B$ and $B \subseteq A$.We will do the same here to prove the identities and show that $(A \cup B)^\complement \subseteq A^\complement \cap B^\complement $ and $A^\complement \cap B^\complement \subseteq (A \cup B)^\complement $. Together, this would prove that $(A \cup B)^\complement = A^\complement \cap B^\complement$. This means we will carry out two proofs in one, starting with proving $(A \cup B)^\complement \subseteq A^\complement \cap B^\complement $ first, and then $A^\complement \cap B^\complement \subseteq (A \cup B)^\complement $ subsequently:
+
+\begin{proof}
+      Assume $A$ and $B$ are subsets of $U$ and all complements are taken inside $U$.
+
+      First, we will prove that $(A \cup B)^\complement \subseteq A^\complement \cap B^\complement $. \\
+      \indent Assume $x \in (A \cup B)^\complement$. \\
+      \indent Then by the definition of complement (in $U$), $x \in U$ and $x \not\in (A \cup B) $. By the definition of union, this means $x$ cannot be in $A$ or in $B$. In other words, $x \not\in A$ and $x \not\in B$, which by definition of complement means $x \in A^\complement$ and $x \in B^\complement$. \\
+      \indent Hence, by the definition of intersection, this means $x \in A^\complement \cap B^\complement$. \\
+      \indent We have shown that $x \in (A \cup B)^\complement $ implies $x \in A^\complement \cap B^\complement$, which means
+
+      $$(A \cup B)^\complement \subseteq A^\complement \cap B^\complement .$$.
+
+      Second, we will prove that $A^\complement \cap B^\complement \subseteq (A \cup B)^\complement $. \\
+      \indent Assume $x \in A^\complement \cap B^\complement$. Then by the definition of intersection, $x \in A^\complement$ and $x \in B^\complement$. \\
+      \indent By the definition of complement (in $U$), this means $x \in U$ and, $x \not\in A$ as well as $x \not\in B$. This means, by the definition of union, $x \not\in (A \cup B)$.\\
+      \indent Hence, by the definition of complement, $x \in (A \cup B)^\complement$. \\
+      \indent We have shown that $x \in A^\complement \cap B^\complement$ implies that $x \in (A \cup B)^\complement$, which means
+
+      $$x \in A^\complement \cap B^\complement \subseteq (A \cup B)^\complement .$$
+
+      Accordingly, we have shown that $(A \cup B)^\complement \subseteq A^\complement \cap B^\complement$ and $A^\complement \cap B^\complement \subseteq (A \cup B)^\complement$. Together this demonstrates that
+      $$(A \cup B)^\complement = A^\complement \cap B^\complement ,$$
+      thus completing the proof.
+\end{proof}
+
+\hfill\\
+
+There is actually another, and quicker, way of proving the \emph{De Morgan's Laws} using set-builder notation:
+
+\begin{proof}
+      \begin{align*} % Symbol * removes numbering, while & below marks the alignment point, and && indicates annotation.
+            A^\complement \cap B^\complement
+            &= \{x \in \mathbb{R}: x \in A^\complement \text{and} x\in B^\complement \} && \text{(definition of intersection)} \\
+            &= \{x \in \mathbb{R}: x \not\in A \text{and} \not\in B \} && \text{(definition of complement)} \\
+            &= \{x \in \mathbb{R}: x \not\in (A \cup B) \} && \text{(definition of union)} \\
+            &= (A \cup B)^\complement. && \text{(definition of complement)}
+      \end{align*}
+\end{proof}
 
 \end{document}

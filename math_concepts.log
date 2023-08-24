@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.17)  24 AUG 2023 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -574,7 +574,7 @@ Package: fullpage 1999/02/23 1.1 (PWD)
 \c@thm=\count307
 
 
-Package amsthm Warning: Unknown theoremstyle `proposition' on input line 23.
+Package amsthm Warning: Unknown theoremstyle `proposition' on input line 24.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
@@ -608,27 +608,27 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./math_concepts.aux)
 \openout1 = `math_concepts.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -688,44 +688,61 @@ e
 (./math_concepts-concordance.tex) [1{/usr/local/texlive/2023/texmf-var/fonts/ma
 p/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/
 cm-super/cm-super-t1.enc}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 199--209
+Underfull \hbox (badness 10000) in paragraph at lines 203--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
-[5] [6] (./math_concepts.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
+
+ []
+
+[5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+[8] (./math_concepts.aux) ) 
 Here is how much of TeX's memory you used:
- 16262 strings out of 476025
- 317004 string characters out of 5790017
- 1870388 words of memory out of 5000000
- 36247 multiletter control sequences out of 15000+600000
- 526830 words of font info for 73 fonts, out of 8000000 for 9000
+ 16264 strings out of 476025
+ 317027 string characters out of 5790017
+ 1872388 words of memory out of 5000000
+ 36248 multiletter control sequences out of 15000+600000
+ 527531 words of font info for 74 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 102i,13n,104p,523b,789s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publ
-ic/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public
-/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/c
-m-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-
-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-su
-per/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-supe
-r/sfxc1000.pfb>
-Output written on math_concepts.pdf (6 pages, 228069 bytes).
+ 102i,13n,104p,1039b,789s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/am
+sfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publi
+c/cm-super/sfbi1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/
+cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm
+-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super
+/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/s
+fxc1000.pfb>
+Output written on math_concepts.pdf (8 pages, 267137 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  17 words of extra memory for PDF output out of 10000 (max. 10000000)
 
