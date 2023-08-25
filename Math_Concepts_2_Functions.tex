@@ -1,6 +1,6 @@
 \documentclass{amsart}
 
-\usepackage{fullpage, amsmath, amssymb, amsthm, tabularx, multirow, multicol, tikz, venndiagram, graphicx}
+\usepackage{fullpage, amsmath, amssymb, amsthm, enumitem, tabularx, multirow, multicol, tikz, venndiagram, graphicx}
 \renewcommand{\baselinestretch}{1.15}
 
 \title{Math Concepts_2_Functions}
@@ -85,7 +85,322 @@ Figure \ref{fig:function_diagram} above illustrates a function with \emph{domain
 
 For diagrams such as Figure \ref{fig:function_diagram} to represent a function, it would have to satisfy both existence and uniqueness aspects of a function. If it fails to do so, then it would not represent a function. For e.g., if $b$ did not map onto any of the elements in $B$ in Figure \ref{fig:function_diagram} then the diagram would not satisfy the existence condition - since $b$ is being sent to nowhere - and thus not represent a function. Similarly, if $b$ not only mapped onto $w$ but also onto $y$ simultaneously then it would not satisfy the uniqueness condition and the diagram would again not represent a function.
 
+\begin{dfn}
+\boxed{injection} \quad A function $f : A \rightarrow B$ is \emph{injective}, or one-to-one, if $f(a_1)=f(a_2)$ implies that $a_1=a_2$. For e.g.,
+\begin{center}
+\begin{tabular}{c c c}
+      \begin{tikzpicture}
+            \draw[thick] (1,1) ellipse (0.75cm and 1.5cm);
+                \node at (0.25, 2.25){A};
+            \draw[thick] (3,1) ellipse (0.75cm and 1.5cm);
+                \node at (2.25, 2.25){B};
 
+            \draw[fill] (1, 1.75) circle [radius=0.05];
+                \node[left] at (1, 1.75){a};
+            \draw[fill] (1, 1) circle [radius=0.05];
+                \node[left] at (1, 1){b};
+            \draw[fill] (1, 0.25) circle [radius=0.05];
+                \node[left] at (1, 0.25){c};
+
+            \draw[fill] (3, 2) circle [radius=0.05];
+                \node[right] at (3, 2){w};
+            \draw[fill] (3, 1.4) circle [radius=0.05];
+                \node[right] at (3, 1.4){x};
+            \draw[fill] (3, 0.7) circle [radius=0.05];
+                \node[right] at (3, 0.7){y};
+            \draw[fill] (3, 0) circle [radius=0.05];
+                \node[right] at (3, 0){z};
+
+            \draw[->] (1.1,1.75) to (2.9,0);
+            \draw[->] (1.1,1) to (2.9,0.7);
+            \draw[->] (1.1,0.25) to (2.9,2);
+
+      \end{tikzpicture}
+      &
+      &
+      \begin{tikzpicture}
+            \draw[thick] (6,1) ellipse (0.75cm and 1.5cm);
+                \node at (5.25, 2.25) {A};
+            \draw[thick] (8,1) ellipse (0.75cm and 1.5cm);
+                \node at (7.25, 2.25){B};
+
+            \draw[fill] (6, 1.75) circle [radius=0.05];
+                \node[left] at (6, 1.75){a};
+            \draw[fill] (6, 1) circle [radius=0.05];
+                \node[left] at (6, 1){b};
+            \draw[fill] (6, 0.25) circle [radius=0.05];
+                \node[left] at (6, 0.25){c};
+
+            \draw[fill] (8, 2) circle [radius=0.05];
+                \node[right] at (8, 2){w};
+            \draw[fill] (8, 1.4) circle [radius=0.05];
+                \node[right] at (8, 1.4){x};
+            \draw[fill] (8, 0.7) circle [radius=0.05];
+                \node[right] at (8, 0.7){y};
+            \draw[fill] (8, 0) circle [radius=0.05];
+                \node[right] at (8, 0){z};
+
+            \draw[->] (6,1.75) to (7.9, 1.4);
+            \draw[->] (6,1) to (7.9,0);
+            \draw[->] (6, 0.25) to (7.9, 1.4);
+      \end{tikzpicture} \\
+    An injection from $A$ to $B$ &
+    &
+    Not an injection from $A$ to $B$
+\end{tabular}
+\end{center}
+
+Both of these are functions. However, the second one is not injective because $f(a)=x$ and $f(b)=x$, which means $f(a) = f(b)$ while $a \neq b$, as these are distinct elements in the domain. Basically, to be injective means that you do not have two arrows pointing at the same point. \\
+This can also be shown via contrapositive:
+\[ \text{A function } f:A\rightarrow B \text{ is \emph{injective}, or one-to-one, if } a_1 \neq a_2 \text{ implies that } f(a_1) \neq  f(a_2). \]
+
+So a function is \emph{injective} if different points in the domain are sent to different points in the codomain. No two arrowheads collide.
+\end{dfn}
+
+\begin{dfn}
+\boxed{surjection} \quad A function $f:A \rightarrow B$ is \emph{surjective}, or onto, if, for every $b \in B$, there exists some $a \in A$ such that $f(a)=b$. For e.g.,
+
+\begin{center}
+\begin{tabular}{c c c}
+      \begin{tikzpicture}
+            \draw[thick] (1,1) ellipse (0.75cm and 1.5cm);
+                \node at (0.25, 2.25){A};
+            \draw[thick] (3,1) ellipse (0.75cm and 1.5cm);
+                \node at (2.25, 2.25){B};
+
+            \draw[fill] (1, 2) circle [radius=0.05];
+                \node[left] at (1, 2){w};
+            \draw[fill] (1, 1.4) circle [radius=0.05];
+                \node[left] at (1, 1.4){x};
+            \draw[fill] (1, 0.7) circle [radius=0.05];
+                \node[left] at (1, 0.7){y};
+            \draw[fill] (1, 0) circle [radius=0.05];
+                \node[left] at (1, 0){z};
+
+            \draw[fill] (3, 1.75) circle [radius=0.05];
+                \node[right] at (3, 1.75){k};
+            \draw[fill] (3, 1) circle [radius=0.05];
+                \node[right] at (3, 1){l};
+            \draw[fill] (3, 0.25) circle [radius=0.05];
+                \node[right] at (3, 0.25){m};
+
+            \draw[->] (1.1,2) to (2.9,0.25);
+            \draw[->] (1.1,1.4) to (2.9,1.75);
+            \draw[->] (1.1,0.7) to (2.9,1);
+            \draw[->] (1.1,0) to (2.9,1.75);
+
+      \end{tikzpicture}
+      &
+      &
+      \begin{tikzpicture}
+            \draw[thick] (6,1) ellipse (0.75cm and 1.5cm);
+                \node at (5.25, 2.25) {A};
+            \draw[thick] (8,1) ellipse (0.75cm and 1.5cm);
+                \node at (7.25, 2.25){B};
+
+            \draw[fill] (6, 2) circle [radius=0.05];
+                \node[left] at (6, 2){w};
+            \draw[fill] (6, 1.4) circle [radius=0.05];
+                \node[left] at (6, 1.4){x};
+            \draw[fill] (6, 0.7) circle [radius=0.05];
+                \node[left] at (6, 0.7){y};
+            \draw[fill] (6, 0) circle [radius=0.05];
+                \node[left] at (6, 0){z};
+
+            \draw[fill] (8, 1.75) circle [radius=0.05];
+                \node[right] at (8, 1.75){k};
+            \draw[fill] (8, 1) circle [radius=0.05];
+                \node[right] at (8, 1){l};
+            \draw[fill] (8, 0.25) circle [radius=0.05];
+                \node[right] at (8, 0.25){m};
+
+            \draw[->] (6,2) to (7.9, 1);
+            \draw[->] (6,1.4) to (7.9,1);
+            \draw[->] (6, 0.7) to (7.9, 0.25);
+            \draw[->] (6, 0) to (7.9, 1);
+      \end{tikzpicture} \\
+    A surjection from $A$ to $B$ &
+    &
+    Not a surjection from $A$ to $B$
+\end{tabular}
+\end{center}
+
+The diagram on the right does not satisfy the definition of \emph{surjection} because it is not true that for every $b \in \{k, l, m\}$ there ought to exist some $a \in \{w, x, y, z\}$ such that $f(a)=b$, but $b=k$ does not have this property. \\
+In terms of arrows, this means every dot in $B$ has at least one arrow pointing at it. \\
+As was the case for injection, surjection can also be defined using contrapositive:
+\begin{center}
+A function $f:A\rightarrow B$ is \emph{surjective}, or onto, if there does not exist any $b \in B$ for which $f(a)\neq b$ for all $a \in A$.
+\end{center}
+\end{dfn}
+
+\begin{note}
+When defining a function $f: A\rightarrow B$, the ideas of \emph{existence} and \emph{uniqueness} were focused on $A$ --- for every $x\in A$, we demand that $f(x)$ exists and be unique. To be injective and surjective, the attention shifts to $B$. To be \emph{surjective} means that $B$ has an existence criterion (for every $b\in B$, there \emph{exists} some $a\in A$ that maps to it). To be \emph{injective} means that $B$ has a uniqueness-type criterion (for every $b\in B$, there is \emph{at most one} $a\in A$ that maps to it).
+\end{note}
+
+\begin{dfn}
+      \boxed{bijection} \quad A function $f:A\rightarrow B$ is \emph{bijective} if it is both injective and surjective.
+      Being bijective means that every element in $A$ is paired up with precisely one element in $B$.
+
+
+If we use the pairing analogy, simply by being a function means everyone in $A$ has found someone to be in a relationship with. Surjectivity guarantees that everyone in $B$ has also found someone to pair up with. Injectivity means all the relationships are monogamous. Therefore being bijective means everyone is in a monogamous relationship.
+
+In terms of arrows, being a bijection means that every dot on the left has precisely one arrow emanating from it, and every dot on the right has precisely one arrow entering it.
+
+\end{dfn}
+
+\begin{note}
+      Defining a function $f:A\rightarrow B$ placed an existence and uniqueness criteria on $A$. If $f$ is both injective and surjective, then this adds existence and uniqueness criteria to $B$. Thus, if $f$ is a bijection, then it has these criteria on both sides: Every $a \in A$ is mapped to precisely one $b \in B$, and every $b\in B$ is mapped to precisely one $a \in A$. In effect, this pairs up each element of $A$ with an element of $B$; namely, $a$ is paired with $f(a)$ in this way.
+\end{note}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip \bigskip
+
+\subsection{\underline{Proving $x$jectiveness, for $x\in$\{in, sur, bi\}}}\hspace*{\fill}
+
+In order to prove injectiveness and surjectiveness we will use their definitions. The outline to prove a function is injective is as follows.
+
+\begin{prpn}
+      $f:A\rightarrow B$ is an injection.
+\end{prpn}
+
+\begin{proof}
+      Assume $x,y\in A$ and $f(x)=f(y)$.
+
+      \begin{center}
+            \guillemotleft\ An explanation of what $x,y\in A$ and $f(x)=f(y)$ means \guillemotright
+      \end{center}
+
+            \begin{center}
+            \begin{tabular}{r l}
+                  \multirow{3}{*}{\huge $\updownarrow$} & apply algebra \\
+                  & apply logic \\
+                  & apply techniques \\
+            \end{tabular}
+            \end{center}
+
+            \begin{center}
+                  \guillemotleft\ Oh hey look, that's what $x=y$ means \guillemotright
+            \end{center}
+
+            Therefore $x = y$.
+
+            Since $x,y\in A$ and $f(x)=f(y)$ implies that $x = y$, it follows that $f$ is injective.
+
+\end{proof}
+
+Alternatively, we could also use the contrapositive where we would start by assuming $x\neq y$, and then conclude that $f(x) \neq f(y)$.
+
+
+The outline for proving surjectiveness similarly uses its definition:
+
+\begin{prpn}
+      $f:A\rightarrow B$ is a surjection.
+\end{prpn}
+
+\begin{proof}
+      Assume $b \in B$.
+
+            \begin{center}
+            \begin{tabular}{r l}
+                  \multirow{2}{*}{\huge $\updownarrow$} & Find an $a \in A$ where $f(a)=b$, \\
+                  & and show how it works \\
+            \end{tabular}
+            \end{center}
+
+            Since wvery $b\in B$ has an $a \in A$ where $f(a) = b$, it follows that $f$ is surjective.
+
+\end{proof}
+
+To prove a function is a bijection, we can prove both above. \\
+Let's apply these to some examples.
+
+
+
+
+
+
+
+
+\bigskip \bigskip
+
+\subsubsection{\underline{Proving $x^2$}}\hspace*{\fill}
+
+
+Let $\mathbb{R^+}$ denote the nonnegative real numbers. Lets prove the following:
+\begin{enumerate}[label=(\alph*)]
+      \item $f : \mathbb{R} \rightarrow \mathbb{R}$ where $f(x)=x^2$ is not injective, surjective, or bijective.
+      \item $g : \mathbb{R^+} \rightarrow \mathbb{R}$ where $g(x)=x^2$ is injective, but not surjective or bijective.
+      \item $h : \mathbb{R} \rightarrow \mathbb{R^+}$ where $h(x)=x^2$ is surjective, but not injective, or bijective.
+      \item $k : \mathbb{R^+} \rightarrow \mathbb{R^+}$ where $k(x)=x^2$ is injective, surjective, and bijective.
+\end{enumerate}
+
+Notice that even though each function squares its input $x$, they are all different. This is because a function is not only the operation, but the domain and codomain as well. Since their domains and/or codomains do not match, they are all different functions. This allows them to have different properties, as we are proving here.
+
+
+\noindent \textbf{Scratch Work.} The injective property is essentially a "horizontal line test". If every horizontal line through the range hits the function in only one place, the function is injective. But if any horizontal line through the range hits the function in more than one place, then the function is not injective.
+
+\begin{center}
+\begin{tabular}{c c c}
+
+      \begin{tikzpicture}
+            \draw[<->] (-2.5,0) -- (2.5,0) node[right] {$\mathbb{R}$};
+            \draw[<->] (0,-1) -- (0,4.5) node[above left] {$\mathbb{R}$};
+            \draw[<->, scale=0.5, domain=-3:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$f(x)$}; %scaled it by half to fit in page. plot command is in (x,y) format where y=x^2.
+            \draw[ultra thin, <->] (-2,0.5) -- (2,0.5);
+            \draw[fill] (-0.5,0.5) circle [radius=0.05];
+            \draw[fill] (0.5,0.5) circle [radius=0.05];
+      \end{tikzpicture}
+      &
+      &
+      \begin{tikzpicture}
+            \draw[->] (0,0) -- (2.5,0) node[right] {$\mathbb{R^+}$};
+            \draw[<->] (0,-1) -- (0,4.5) node[above left] {$\mathbb{R}$};
+            \draw[<->, scale=0.5, domain=0:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$g(x)$};
+            \draw[ultra thin, ->] (0,0.5) -- (2,0.5);
+            \draw[ultra thin, ->] (0,2) -- (2,2);
+            \draw[fill] (0,0) circle [radius=0.05];
+            \draw[fill] (0.5,0.5) circle [radius=0.05];
+            \draw[fill] (1,2) circle [radius=0.05];
+      \end{tikzpicture}
+      \\
+      \begin{tikzpicture}
+            \draw[<->] (-2.5,0) -- (2.5,0) node[right] {$\mathbb{R}$};
+            \draw[<->] (0,0) -- (0,4.5) node[above left] {$\mathbb{R^+}$};
+            \draw[<->, scale=0.5, domain=-3:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$h(x)$};
+            \draw[ultra thin, <->] (-2,0.5) -- (2,0.5);
+            \draw[fill] (-0.5,0.5) circle [radius=0.05];
+            \draw[fill] (0.5,0.5) circle [radius=0.05];
+      \end{tikzpicture}
+      &
+      &
+      \begin{tikzpicture}
+            \draw[->] (0,0) -- (2.5,0) node[right] {$\mathbb{R^+}$};
+            \draw[<->] (0,0) -- (0,4.5) node[above left] {$\mathbb{R^+}$};
+            \draw[<->, scale=0.5, domain=0:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$k(x)$};
+            \draw[ultra thin, ->] (0,0.5) -- (2,0.5);
+            \draw[ultra thin, ->] (0,2) -- (2,2);
+            \draw[fill] (0,0) circle [radius=0.05];
+            \draw[fill] (0.5,0.5) circle [radius=0.05];
+            \draw[fill] (1,2) circle [radius=0.05];
+      \end{tikzpicture}
+\end{tabular}
+\end{center}
+
+Looking at the graphs, it makes sense that $f$ and $h$ are not injective since we can show that any two points from the domain do map to the same value in the codomain (for example, -1 and 1). On the other hand, $g$ and $k$ seems to be injective.
+
+
+To prove that $g$ and $k$ are injective,
 
 
 \end{document}
