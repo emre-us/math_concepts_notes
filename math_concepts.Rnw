@@ -21,7 +21,7 @@
 \theoremstyle{definition} % This changes the style from 'plain' (the default) for the next proclamation.
 \newtheorem*{dfn}{Definition} % As in the align environment, the asterisk here suppresses the numbering.
 
-\theoremstyle{proposition} % And this changes the style to 'proposition' as an option.
+\theoremstyle{definition}
 \newtheorem*{prpn}{Proposition}
 
 \theoremstyle{remark} % And this changes the style to 'remark' as an option.
@@ -55,7 +55,7 @@
 \end{dfn}
 
 \begin{dfn}
-\boxed{\mathbb{N}} \quad The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\} \footnote{Note that it does not include 0.} For e.g.,
+\boxed{\mathbb{N}} \quad The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\}\footnote{Note that it does not include 0.} For e.g.,
     \begin{itemize}
           \item $\{n^2:n \in \mathbb{N} \} = \{1, 4, 9, 16, 25, \dots\}$
           \item $\{n \in \mathbb{N} : 6|n\} = \{6, 12, 18, 24, 30, \dots\}$
@@ -199,18 +199,22 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
 \begin{dfn}
 \boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A and b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
       \begin{itemize}
-            \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\alpha, \beta \} $ then \\
-                  $A \times B = \{(1, \alpha), (1, \beta), (3, \alpha), (3, \beta), (5, \alpha), (5, \beta) \} $. \\
+            \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\alpha, \beta \} $ then
+                  \[ A \times B = \{(1, \alpha), (1, \beta), (3, \alpha), (3, \beta), (5, \alpha), (5, \beta) \}. \]
+
                   These elements can be generated via table too:
+                  \begin{center}
                   \begin{tabular}{c | c | c | c}
                         & 1 & 3 & 5 \\
                         \hline
                         $\alpha$ & $(1, \alpha)$ & $(3, \alpha)$ & $(5, \alpha)$ \\
                         $\beta$ & $(1, \beta)$ & $(3, \beta)$ & $(5, \beta)$ \\
-                  \end{tabular} \\
-                  If $\alpha = \frac{1}{2}$ and $\beta = \frac{3}{2}$ then we can have Cartesian coordinates as well: \\
+                  \end{tabular}
+                  \end{center}
 
-                  \begin{tikzpicture}
+                  If $\alpha = \frac{1}{2}$ and $\beta = \frac{3}{2}$ then we can have Cartesian coordinates as well:
+
+                 \[ \begin{tikzpicture}
                         \draw[<->, rounded corners, thick] (0,2) -- (0,0) -- (5, 0);
                         \draw[help lines] (0, 0) grid (5, 2);
                         \draw[fill = lightgray] (1, 0.5) circle [radius = 0.05];
@@ -225,7 +229,7 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
                         \node [right] at (3, 1.5) {(3, $\frac{3}{2}$)};
                         \draw[fill = lightgray] (5, 1.5) circle [radius = 0.05];
                         \node [right] at (5, 1.5) {(5, $\frac{3}{2}$)};
-                  \end{tikzpicture}
+                  \end{tikzpicture} \]
 
       \end{itemize}
 \end{dfn}
@@ -246,14 +250,12 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
 
 \section{\textbf{Proofs}}
 
-\subsection{\underline{Proving $A \subseteq B$}}
-
-\hfill\\ % The \hfill fills the line with empty space, so that \\ can end this line without an error.
+\subsection{\underline{Proving $A \subseteq B$}}\hspace*{\fill} %\hspace*{\fill} fills the line with empty space.
 
 In order to prove this we will have to show that if $x \in A$ then $x \in B$. So, here is an outline for a direct proof that a set $A$ is a subset of a set $B$:
 
 \begin{prpn}
-Suppose $A$ and $B$ are sets. It is the case that \footnote{It is advised to start a sentence with words and not mathematical notation} $A \subseteq B$
+Suppose $A$ and $B$ are sets. It is the case that\footnote{It is advised to start a sentence with words and not mathematical notation} $A \subseteq B$
 \end{prpn}
 
 \begin{proof}
@@ -285,7 +287,7 @@ Assume $x \in A$
 Let's apply this set-up to a proposition where one set is in another:
 
 \begin{prpn}
-It is the case that \[ \{n \in \mathbb{Z} : 12 | n \} \subseteq \{n \in \mathbb{Z}: 3 | n \} \]
+It is the case that \[ \{n \in \mathbb{Z} : 12 \mid n \} \subseteq \{n \in \mathbb{Z}: 3 \mid n \} \]
 \end{prpn}
 
 \medskip
@@ -293,18 +295,18 @@ It is the case that \[ \{n \in \mathbb{Z} : 12 | n \} \subseteq \{n \in \mathbb{
 Before writing the proof we need to do some scratch work. Here we can we can write out few of the terms to see what we are dealing with. This may also be helpful in finding a proof.
 \end{note}
 
-\noindent \textbf{Scratch Work.} Lets write some terms of the first set: \[ \{n \in \mathbb{Z} : 12|n \} = \{\dots,-24, -12, 0, 12, 24, \dots \}. \] and for the second set: \[ \{n \in \mathbb{Z}:3|n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
-So based on this, it seems to be that the elements in the first set are in the second set as well. To write this as a proof, we will use the outline of what a proof looks like above. To start, we need to find an explanation for \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright. For that, we can rely on the following definition for what it means to say "$12 | x$":
+\noindent \textbf{Scratch Work.} Lets write some terms of the first set: \[ \{n \in \mathbb{Z} : 12\mid n \} = \{\dots,-24, -12, 0, 12, 24, \dots \}. \] and for the second set: \[ \{n \in \mathbb{Z}:3\mid n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
+So based on this, it seems to be that the elements in the first set are in the second set as well. To write this as a proof, we will use the outline of what a proof looks like above. To start, we need to find an explanation for \guillemotleft\ An explanation of what $ x \in A$ means \guillemotright. For that, we can rely on the following definition for what it means to say "$12 \mid x$":
 
 \begin{dfn}
-\boxed{a|b} \quad A nonzero integer $a$ is said to divide an integer $b$ if $b = ak$ for some integer $k$. When $a$ divides $b$, we write "$a | b$" and when a does not divide b we write "$a \nmid b$."
+\boxed{a\mid b} \quad A nonzero integer $a$ is said to divide an integer $b$ if $b = ak$ for some integer $k$. When $a$ divides $b$, we write "$a \mid  b$" and when a does not divide b we write "$a \nmid b$."
 \end{dfn}
 
 We can now use this in our proof. Remember, based on our outline we start off by stating "Assume $x \in A$" and then explain what that means:
 
 \begin{proof}
-      Assume $\underbrace{x \in \{n \in \mathbb{Z}: 12|n \}}_{x \in A}$ \\
-      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., 12|x. By the definition of "a|b", this means $x=12k$ for some $k \in \mathbb{Z}$.
+      Assume $\underbrace{x \in \{n \in \mathbb{Z}: 12\mid n \}}_{x \in A}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12\mid x$. By the definition of "$a\mid b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
 
       \begin{center}
       \begin{tabular}{r l}
@@ -318,17 +320,17 @@ We can now use this in our proof. Remember, based on our outline we start off by
       \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright
       \end{center}
 
-      Therefore, $\underbrace{x \in \{n \in \mathbb{Z} : 3|n \}}_{x \in B}$ (This is us saying: "Therefore, $x \in B$").
+      Therefore, $\underbrace{x \in \{n \in \mathbb{Z} : 3\mid n \}}_{x \in B}$ (This is us saying: "Therefore, $x \in B$").
 
-      Since $\overbrace{x \in\{n \in \mathbb{Z}: 12|n \}}^{x \in A}$ implies that $\overbrace{x \in \{n \in \mathbb{Z} : 3|n \}}^{x \in B}$, it follows that \\ $\overbrace{\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}}^{A \subseteq B}$
+      Since $\overbrace{x \in\{n \in \mathbb{Z}: 12\mid n \}}^{x \in A}$ implies that $\overbrace{x \in \{n \in \mathbb{Z} : 3\mid n \}}^{x \in B}$, it follows that \\ $\overbrace{\{n \in \mathbb{Z}: 12\mid n \} \subseteq \{n \in \mathbb{Z} : 3\mid n \}}^{A \subseteq B}$
 
 \end{proof}
 
-Before we look at $\updownarrow$ segment of the proof, lets briefly discuss the \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright part. We need to show that, by the definition above, 3 also divides $x$, i.e., $3|x$, so that x can also be an element of the second set, i.e. set $B$. If 3 does divide $x$ then, by the definition again, x must equal to $3m$ for some integer m. We can add this to our proof:
+Before we look at $\updownarrow$ segment of the proof, lets briefly discuss the \guillemotleft\ Oh hey look, that's what $x \in B$ means \guillemotright part. We need to show that, by the definition above, 3 also divides $x$, i.e., $3\mid x$, so that x can also be an element of the second set, i.e. set $B$. If 3 does divide $x$ then, by the definition again, x must equal to $3m$ for some integer m. We can add this to our proof:
 
 \begin{proof}
-      Assume $x \in \{n \in \mathbb{Z}: 12|n \}$ \\
-      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12|x$. By the definition of "$a | b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
+      Assume $x \in \{n \in \mathbb{Z}: 12\mid n \}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12\mid x$. By the definition of "$a \mid  b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
 
       \begin{center}
       \begin{tabular}{r l}
@@ -338,24 +340,24 @@ Before we look at $\updownarrow$ segment of the proof, lets briefly discuss the 
       \end{tabular}
       \end{center}
 
-      Therefore, $x = 3m$ for some $m \in \mathbb{Z}$. Thus, by the definition of "$a | b$", this means $3 | x$.
+      Therefore, $x = 3m$ for some $m \in \mathbb{Z}$. Thus, by the definition of "$a \mid  b$", this means $3 \mid  x$.
 
-      Therefore, $x \in \{n \in \mathbb{Z} : 3|n \}$.
+      Therefore, $x \in \{n \in \mathbb{Z} : 3\mid n \}$.
 
-      Since $x \in\{n \in \mathbb{Z}: 12|n \}$ implies that $x \in \{n \in \mathbb{Z} : 3|n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}$
+      Since $x \in\{n \in \mathbb{Z}: 12\mid n \}$ implies that $x \in \{n \in \mathbb{Z} : 3\mid n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12\mid n \} \subseteq \{n \in \mathbb{Z} : 3\mid n \}$
 
 \end{proof}
 
 Now, we can tackle the $\updownarrow$ segment. We said $x = 12k$ and $x = 3m$ for some $k, m \in \mathbb{Z}$. Thus $12k = 3m$ or $4k = m$. Since $k \in \mathbb{Z}$ so is $4k$. Lets plug this in to our proof:
 
 \begin{proof}
-      Assume $x \in \{n \in \mathbb{Z}: 12|n \}$ \\
-      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12|x$. By the definition of divisibility, "$a | b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
+      Assume $x \in \{n \in \mathbb{Z}: 12\mid n \}$ \\
+      Thus $x$ is also $\in \mathbb{Z}$ and, therefore, 12 also divides $x$, i.e., $12\mid x$. By the definition of divisibility, "$a \mid b$", this means $x=12k$ for some $k \in \mathbb{Z}$.
 
       Equivalently, $x = 3\cdot(4k)$.
-      And since $k \in \mathbb{Z}$, it is also true that $4k \in \mathbb{Z}$. Thus, by the definition of divisibility, "$a | b$", this means 3 also divides $x$, i.e., $3 | x$. So, $x \in \{n \in \mathbb{Z} : 3|n \}$
+      And since $k \in \mathbb{Z}$, it is also true that $4k \in \mathbb{Z}$. Thus, by the definition of divisibility, "$a \mid  b$", this means 3 also divides $x$, i.e., $3 \mid x$. So, $x \in \{n \in \mathbb{Z} : 3\mid n \}$
 
-      Since $x \in\{n \in \mathbb{Z}: 12|n \}$ implies that $x \in \{n \in \mathbb{Z} : 3|n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12|n \} \subseteq \{n \in \mathbb{Z} : 3|n \}$
+      Since $x \in\{n \in \mathbb{Z}: 12\mid n \}$ implies that $x \in \{n \in \mathbb{Z} : 3\mid n \}$, it follows that \\ $\{n \in \mathbb{Z}: 12\mid n \} \subseteq \{n \in \mathbb{Z} : 3\mid n \}$
 
 \end{proof}
 
@@ -381,7 +383,7 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 \noindent \textbf{Scratch Work.} For $x \in A$, $x$ can take one of two values only --- either -1 or 3. So we can take each of those values as a separate case. In each of those cases we need to show $x \in B$. That means, we need to show that in each case $x$ satisfies $x^3 - 3x^2 - x + 3 = 0$.
 
 \begin{proof}
-      Assume $x \in A$. Then either $x = -1$ or $x = 3$. Consider the two cases separately. \\
+      Assume $x \in A$. Then either $x = -1$ or $x = 3$. Consider the two cases separately.
     \begin{center}
       \begin{tabular}{l l}
             \underline{Case 1: $x = -1$}. & Note that $x$ is a real number, and \\
@@ -409,9 +411,7 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 \bigskip \bigskip \bigskip \bigskip
 
-\subsection{\underline{Proving $A = B$}}
-
-\hfill\\
+\subsection{\underline{Proving $A = B$}}\hspace*{\fill}
 
  Since the two sets contain exactly the same elements, this means that not only every element in $A$ is also in $B$ but also every element in $B$ is in $A$. This may come across as tautology but this is a way to proove that $A = B$ by showing that $A \subseteq B$ and $B \subseteq A$. This gives an indication to the outline of a proof. We already showed how to prove $A \subseteq B$ above, so the outline will be very similar:
 
@@ -594,8 +594,6 @@ So we can see that the intersection of $A^\complement$ and $B^\complement$ is th
       thus completing the proof.
 \end{proof}
 
-\hfill\\
-
 There is actually another, and quicker, way of proving the \emph{De Morgan's Laws} using set-builder notation:
 
 \begin{proof}
@@ -606,6 +604,51 @@ There is actually another, and quicker, way of proving the \emph{De Morgan's Law
             &= \{x \in \mathbb{R}: x \not\in (A \cup B) \} && \text{(definition of union)} \\
             &= (A \cup B)^\complement. && \text{(definition of complement)}
       \end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip \bigskip
+
+\subsection{\underline{Proving $C = A \cap B$}}
+
+\begin{prpn}
+      It is the case that $\{n \in \mathbb{Z}: 12\mid n \} = \{n \in \mathbb{Z}: 3\mid n \} \cap \{n \in \mathbb{Z}: 4\mid n \}$.
+\end{prpn}
+
+\noindent \textbf{Scratch Work.} As before, lets write out some of the terms of these sets:
+                  \[ \{n \in \mathbb{Z}:3\mid n \} = \{\dots, -27, -24, \dots, -15, -12, \dots, -3, 0, 3, \dots, 9, 12, \dots, 21, 24, \dots \}. \]
+                  \[ \{n \in \mathbb{Z}:4\mid n \} = \{\dots, -28, -24, \dots, -16, -12, \dots, -4, 0, 4, \dots, 8, 12, \dots, 20, 24, \dots \}. \]
+                  \indent We see that the $n$ that are in both sets are $\dots, -24, -12, 0, 12, 24, \dots$ which are $n$ such that $n \in \mathbb{Z}$, so the proposition seems to be correct. To prove it, we will use the approach we usually take in proving the identity, $C = A \cap B$, by showing that $C \subseteq A \cap B$ and that $A \cap B \subseteq C$.
+
+\begin{proof}
+      Define $A = \{n \in \mathbb{Z}:3\mid n \}$, $B = \{n \in \mathbb{Z}:4\mid n \}$, and $C = \{n \in \mathbb{Z}: 12\mid n \}$. \\
+      First, we will prove that $C \subseteq A \cap B$. \\
+            \indent Assume $x \in C$. This means that $x \ in \mathbb{Z}$ and $12 \mid x$, which by the definition of "$a \mid b$" implies that $x = 12k$ for some $k = \mathbb{Z}$. Equivalently,
+              \[ x = 4 \cdot (3k). \]
+            \indent Since $k \in \mathbb{Z}$, so is $3k \in \mathbb{Z}$. By the definition of "$a \mid b$" this means that $4 \mid x$. Therefore, $x \in B$. \\
+            \indent Since $x \in C$ implies that $x \in B$, it follows that $C \subseteq B$. \\
+            \indent We have previously proved that $C \subseteq A$ above, which by the definition of a subset means that if $x \in C$, then $x \in A$. \\
+            \indent We have proven that $x \in A$ and $x \in B$, so by the definition of the intersection, this implies that $x \in A \cap B.$ \\
+            \indent We have shown that if $x \in C$, then $x \in A \cap B$ which implies $C \subseteq A \cap B$, as desired. \\
+      Second, we will prove that $A \cap B \subseteq C$. \\
+            \indent Assume $x \in A \cap B$, which by the definition of intersection means that $x \in A$ and $x \in B$. This means that $x \in \mathbb{Z}, 3 \mid x,$ and $4 \mid x$, which by definition of "$a\mid b$ implies that $x = 3k$ and $x = 4l$, for some $k, l \in \mathbb{Z}$. \\
+            \indent That is, $3k = 4l$, which means either "$3 \mid 4$" or "$3 \mid l$". Since $3 \nmid 4$, it must be the case that $3 \mid l$.\\
+            \indent That is, $l = 3m$ for some $m \in \mathbb{Z}$.
+            \indent We have shown that $x = 4l$ and $l = 3m$, where $l,m \in \mathbb{Z}$. Combined, this means that
+              \[ x = 4\cdot (3m) = 12m \]
+            \indent where $m \in \mathbb{Z}$, which by the definition of divisibility means $12 \mid x$. And so, $x \in C$.
+            \indent We have proved that if $x \in A \cap B$, then $X \in C$. This implies $A \cap B \subseteq C$, as desired.
+        We have now shown that $C \subseteq A \cap B$ and $A \cap B \subseteq C$. Combined, this implies that $C = A \cap B$, completing the proof.
 \end{proof}
 
 \end{document}
