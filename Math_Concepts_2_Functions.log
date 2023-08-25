@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 10:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Math_Concepts_1_Sets.tex
-(./Math_Concepts_1_Sets.tex
+**Math_Concepts_2_Functions.tex
+(./Math_Concepts_2_Functions.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsart.cls
@@ -117,6 +117,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \thm@headsep=\skip57
 \dth@everypar=\toks26
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip58
+)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
@@ -129,8 +133,8 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \ar@mcellbox=\box54
 \extrarowheight=\dimen153
 \NC@list=\toks27
-\extratabsurround=\skip58
-\backup@length=\skip59
+\extratabsurround=\skip59
+\backup@length=\skip60
 \ar@cellbox=\box55
 )
 \TX@col@width=\dimen154
@@ -143,9 +147,9 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip60
+\multirow@colwidth=\skip61
 \multirow@cntb=\count273
-\multirow@dima=\skip61
+\multirow@dima=\skip62
 \bigstrutjot=\dimen159
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
@@ -162,8 +166,8 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \page@free=\dimen162
 \premulticols=\dimen163
 \postmulticols=\dimen164
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
+\multicolsep=\skip63
+\multicolbaselineskip=\skip64
 \partial@page=\box57
 \last@line=\box58
 \maxbalancingoverflow=\dimen165
@@ -554,22 +558,18 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count306
 )
-\@venn@Ax=\skip64
-\@venn@Ay=\skip65
-\@venn@Bx=\skip66
-\@venn@By=\skip67
-\@venn@Cx=\skip68
-\@venn@Cy=\skip69
-\@venn@w=\skip70
-\@venn@h=\skip71
-\@venn@intersect@i@x=\skip72
-\@venn@intersect@i@y=\skip73
-\@venn@intersect@ii@x=\skip74
-\@venn@intersect@ii@y=\skip75
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
-Package: fullpage 1999/02/23 1.1 (PWD)
-\FP@margin=\skip76
+\@venn@Ax=\skip65
+\@venn@Ay=\skip66
+\@venn@Bx=\skip67
+\@venn@By=\skip68
+\@venn@Cx=\skip69
+\@venn@Cy=\skip70
+\@venn@w=\skip71
+\@venn@h=\skip72
+\@venn@intersect@i@x=\skip73
+\@venn@intersect@i@y=\skip74
+\@venn@intersect@ii@x=\skip75
+\@venn@intersect@ii@y=\skip76
 )
 \c@thm=\count307
 
@@ -602,30 +602,30 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count311
 \l__pdf_internal_box=\box113
 )
-(./Math_Concepts_1_Sets.aux)
-\openout1 = `Math_Concepts_1_Sets.aux'.
+(./Math_Concepts_2_Functions.aux)
+\openout1 = `Math_Concepts_2_Functions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -682,40 +682,33 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-(./Math_Concepts_1_Sets-concordance.tex) [1{/usr/local/texlive/2023/texmf-var/f
-onts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc
-/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6] [7] [8] [9]
-(./Math_Concepts_1_Sets.aux) ) 
+(./Math_Concepts_2_Functions-concordance.tex) [1{/usr/local/texlive/2023/texmf-
+var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/font
+s/enc/dvips/cm-super/cm-super-t1.enc}] (./Math_Concepts_2_Functions.aux) ) 
 Here is how much of TeX's memory you used:
- 16264 strings out of 476025
- 317160 string characters out of 5790017
- 1873388 words of memory out of 5000000
- 36248 multiletter control sequences out of 15000+600000
- 527531 words of font info for 74 fonts, out of 8000000 for 9000
+ 16020 strings out of 476025
+ 310929 string characters out of 5790017
+ 1865388 words of memory out of 5000000
+ 36007 multiletter control sequences out of 15000+600000
+ 524345 words of font info for 62 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 102i,13n,104p,1046b,789s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
-blic/cm-super/sfbi1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publ
-ic/cm-super/sfbx1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public
-/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/c
-m-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-
-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-su
-per/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-supe
-r/sfxc1000.pfb>
-Output written on Math_Concepts_1_Sets.pdf (9 pages, 271115 bytes).
+ 102i,13n,104p,686b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/cm-super/sfxc1000.pfb>
+Output written on Math_Concepts_2_Functions.pdf (1 page, 122759 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  17 words of extra memory for PDF output out of 10000 (max. 10000000)
 
