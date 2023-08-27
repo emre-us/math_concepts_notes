@@ -318,7 +318,7 @@ The outline for proving surjectiveness similarly uses its definition:
             \end{tabular}
             \end{center}
 
-            Since wvery $b\in B$ has an $a \in A$ where $f(a) = b$, it follows that $f$ is surjective.
+            Since every $b\in B$ has an $a \in A$ where $f(a) = b$, it follows that $f$ is surjective.
 
 \end{proof}
 
@@ -334,8 +334,8 @@ Let's apply these to some examples.
 
 \bigskip \bigskip
 
-\subsubsection{\underline{Proving $x^2$}}\hspace*{\fill}
-
+\subsubsection{\underline{Proving injectiveness, surjectiveness, or bijectiveness of $x^2$}}\hspace*{\fill}
+\bigskip
 
 Let $\mathbb{R^+}$ denote the nonnegative real numbers. Lets prove the following:
 \begin{enumerate}[label=(\alph*)]
@@ -347,16 +347,16 @@ Let $\mathbb{R^+}$ denote the nonnegative real numbers. Lets prove the following
 
 Notice that even though each function squares its input $x$, they are all different. This is because a function is not only the operation, but the domain and codomain as well. Since their domains and/or codomains do not match, they are all different functions. This allows them to have different properties, as we are proving here.
 
-
-\noindent \textbf{Scratch Work.} The injective property is essentially a "horizontal line test". If every horizontal line through the range hits the function in only one place, the function is injective. But if any horizontal line through the range hits the function in more than one place, then the function is not injective.
+\bigskip
+\noindent \textbf{Scratch Work.} The injective property is essentially a "horizontal line test". If every horizontal line through the range hits the function in only one place, the function is injective. But if any horizontal line through the range hits the function in more than one place, then the function is not injective because it wouldn't satisfy the uniqueness criterion.
 
 \begin{center}
 \begin{tabular}{c c c}
 
       \begin{tikzpicture}
             \draw[<->] (-2.5,0) -- (2.5,0) node[right] {$\mathbb{R}$};
-            \draw[<->] (0,-1) -- (0,4.5) node[above left] {$\mathbb{R}$};
-            \draw[<->, scale=0.5, domain=-3:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$f(x)$}; %scaled it by half to fit in page. plot command is in (x,y) format where y=x^2.
+            \draw[<->] (0,-0.5) -- (0,2.5) node[above left] {$\mathbb{R}$};
+            \draw[<->, scale=0.5, domain=-2:2, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$f(x)$}; %scaled it by half to fit in page. plot command is in (x,y) format where y=x^2.
             \draw[ultra thin, <->] (-2,0.5) -- (2,0.5);
             \draw[fill] (-0.5,0.5) circle [radius=0.05];
             \draw[fill] (0.5,0.5) circle [radius=0.05];
@@ -365,8 +365,8 @@ Notice that even though each function squares its input $x$, they are all differ
       &
       \begin{tikzpicture}
             \draw[->] (0,0) -- (2.5,0) node[right] {$\mathbb{R^+}$};
-            \draw[<->] (0,-1) -- (0,4.5) node[above left] {$\mathbb{R}$};
-            \draw[<->, scale=0.5, domain=0:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$g(x)$};
+            \draw[<->] (0,-0.5) -- (0,2.5) node[above left] {$\mathbb{R}$};
+            \draw[<->, scale=0.5, domain=0:2, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[below right] {$g(x)$};
             \draw[ultra thin, ->] (0,0.5) -- (2,0.5);
             \draw[ultra thin, ->] (0,2) -- (2,2);
             \draw[fill] (0,0) circle [radius=0.05];
@@ -376,8 +376,8 @@ Notice that even though each function squares its input $x$, they are all differ
       \\
       \begin{tikzpicture}
             \draw[<->] (-2.5,0) -- (2.5,0) node[right] {$\mathbb{R}$};
-            \draw[<->] (0,0) -- (0,4.5) node[above left] {$\mathbb{R^+}$};
-            \draw[<->, scale=0.5, domain=-3:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$h(x)$};
+            \draw[<->] (0,0) -- (0,2.5) node[above left] {$\mathbb{R^+}$};
+            \draw[<->, scale=0.5, domain=-2:2, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$h(x)$};
             \draw[ultra thin, <->] (-2,0.5) -- (2,0.5);
             \draw[fill] (-0.5,0.5) circle [radius=0.05];
             \draw[fill] (0.5,0.5) circle [radius=0.05];
@@ -386,8 +386,8 @@ Notice that even though each function squares its input $x$, they are all differ
       &
       \begin{tikzpicture}
             \draw[->] (0,0) -- (2.5,0) node[right] {$\mathbb{R^+}$};
-            \draw[<->] (0,0) -- (0,4.5) node[above left] {$\mathbb{R^+}$};
-            \draw[<->, scale=0.5, domain=0:3, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[left] {$k(x)$};
+            \draw[<->] (0,0) -- (0,2.5) node[above left] {$\mathbb{R^+}$};
+            \draw[<->, scale=0.5, domain=0:2, smooth, variable=\x,] plot ({\x}, {\x*\x}) node[below right] {$k(x)$};
             \draw[ultra thin, ->] (0,0.5) -- (2,0.5);
             \draw[ultra thin, ->] (0,2) -- (2,2);
             \draw[fill] (0,0) circle [radius=0.05];
@@ -400,7 +400,50 @@ Notice that even though each function squares its input $x$, they are all differ
 Looking at the graphs, it makes sense that $f$ and $h$ are not injective since we can show that any two points from the domain do map to the same value in the codomain (for example, -1 and 1). On the other hand, $g$ and $k$ seems to be injective.
 
 
-To prove that $g$ and $k$ are injective,
+To prove that $g$ and $k$ are injective, we will assume that, say, $g(x)=g(y)$, and we will try to prove $x=y$:
+
+\[ g(x) = g(y)\]
+\[ x^2 = y^2 \]
+\[ \sqrt{x^2} = \sqrt{y^2} \]
+\[x = y \text{ or } x=-y\]
+
+While $x$ take on two values, $y$ and $-y$, and thus violates the uniqueness criterion for $f$ and $h$, this is not the case for $g$ and $k$ since their domains do not include negative numbers. So, for $g$ and $k$ this scratch work should prove $x=y$, which would in turn prove these functions are injective.
+
+
+For surjectivity, or at least to show that a function is not surjective, we need to find some $y$ in the codomain that nothing maps to. Since functions $f$ and $g$ has $y$s that are negative, and there aren't any $x$s square of which would be negative, we can easily show that $f$ and $g$ are not surjective. On the other hand, the codomains of $h$ and $k$ do not include negative numbers so they will be surjective. To show this, we will pick any $y$ in the codomain, and find the specific $x$ in the domain such that $h(x)=y$ and $k(x)=y$. The value of $x = \sqrt{y}$ should work in both cases.
+
+\bigskip
+\begin{proof}
+      \underline{Part i.} \quad Observe that $f(-2) = f(2)$ while $-2 \neq 2$, showing that $f$ is not injective. \\
+      Also observe that $f(x)=x^2 \geq 0$ for all $x \in \mathbb{R}$ showing that there does not exist $x \in \mathbb{R}$ for which $f(x) = -4$ --- or for which $f(x)  < 0$. Since -4, and all negative numbers, are in $f$'s codomain, this proves that $f$ is not surjective, either. \\
+      Since $f$ is not surjective or injective, it cannot be bijective either.
+
+
+      \medskip
+      \underline{Part ii.} \quad Observe that $g(x)=x^2 \geq 0$ for all $\mathbb{R^+}$, there does not exist $x \in\mathbb{R}$ for which $g(x) = -4$ --- or for which $f(x)  < 0$. Since -4, and all negative numbers, are in $g$'s codomain, this proves that $g$ is not surjective. \\
+      By definition, this also means $g$ is not bijective. \\
+      To see $g$ is injective, assume $x,y\in \mathbb{R^+}$ and $g(x)=g(y)$. Then,
+      \[ g(x) = g(y) \]
+      \[ x^2 = y^2 \]
+      \[ \sqrt{x^2} = \sqrt{y^2} \]
+      \[x = y \text{ or } x=-y\]
+
+      Since $x,y\in\mathbb{R^+}$, the only option is that both $x$ and $y$ can only be positive, so $x=y$. \\
+      We have shown that $g(x)=g(y)$ implies $x=y$, thus $g$ is an injection.
+
+
+      \medskip
+      \underline{Part iii.} \quad Observe that $h(x)$ is not injective for the same reasons as $f$: $f(-2)=f(2)$ but $-2 \neq 2$ showing that $h$ is not injective. \\
+      This means, by definition, it cannot be bijective, either. \\
+      To show that $h$ is a surjection, pick any $y$ in its codomain, $\mathbb{R^+}$, and note that its positive square root exists since $y \geq 0$. If that positive square root is $x$, then $x\in\mathbb{R^+}$ since $x=\sqrt{y}$. Therefore,
+      \[h(x) = x^2 = (\sqrt{y}^2) = y. \]
+      We have shown that for every $b\in\mathbb{R^+}$ there exists an $x\in\mathbb{R^+}$ such that $h(x)=y$. This proves that $h$ is a surjection.
+
+
+      \medskip
+      \underline{Part iii.} \quad The fact that $k$ is an injection follows the same reasoning as with $g$ in Part ii, and the fact that $k$ is a surjection follows the exact same reasoning as with $h$ in Part iii. Since $k$ is an injection and a surjection, it is also a bijection.
+
+\end{proof}
 
 
 \end{document}
