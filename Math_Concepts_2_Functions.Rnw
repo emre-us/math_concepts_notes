@@ -149,7 +149,8 @@ For diagrams such as Figure \ref{fig:function_diagram} to represent a function, 
 \end{tabular}
 \end{center}
 
-Both of these are functions. However, the second one is not injective because $f(a)=x$ and $f(b)=x$, which means $f(a) = f(b)$ while $a \neq b$, as these are distinct elements in the domain. Basically, to be injective means that you do not have two arrows pointing at the same point. \\
+\bigskip
+Both of these are functions. However, the second one is not injective because $f(a)=x$ and $f(c)=x$, which means $f(a) = f(c)$ while $a \neq c$, as these are distinct elements in the domain. Basically, to be injective means that you do not have two arrows pointing at the same point. \\
 This can also be shown via contrapositive:
 \[ \text{A function } f:A\rightarrow B \text{ is \emph{injective}, or one-to-one, if } a_1 \neq a_2 \text{ implies that } f(a_1) \neq  f(a_2). \]
 
@@ -158,6 +159,8 @@ So a function is \emph{injective} if different points in the domain are sent to 
 
 \begin{dfn}
 \boxed{surjection} \quad A function $f:A \rightarrow B$ is \emph{surjective}, or onto, if, for every $b \in B$, there exists some $a \in A$ such that $f(a)=b$. For e.g.,
+
+\medskip
 
 \begin{center}
 \begin{tabular}{c c c}
@@ -224,6 +227,7 @@ So a function is \emph{injective} if different points in the domain are sent to 
 \end{tabular}
 \end{center}
 
+\bigskip
 The diagram on the right does not satisfy the definition of \emph{surjection} because it is not true that for every $b \in \{k, l, m\}$ there ought to exist some $a \in \{w, x, y, z\}$ such that $f(a)=b$, but $b=k$ does not have this property. \\
 In terms of arrows, this means every dot in $B$ has at least one arrow pointing at it. \\
 As was the case for injection, surjection can also be defined using contrapositive:
@@ -240,8 +244,8 @@ When defining a function $f: A\rightarrow B$, the ideas of \emph{existence} and 
       \boxed{bijection} \quad A function $f:A\rightarrow B$ is \emph{bijective} if it is both injective and surjective.
       Being bijective means that every element in $A$ is paired up with precisely one element in $B$.
 
-
-If we use the pairing analogy, simply by being a function means everyone in $A$ has found someone to be in a relationship with. Surjectivity guarantees that everyone in $B$ has also found someone to pair up with. Injectivity means all the relationships are monogamous. Therefore being bijective means everyone is in a monogamous relationship.
+\bigskip
+If we use the pairing analogy, simply by being a function everyone in $A$ has found someone to be in a relationship with. Surjectivity guarantees that everyone in $B$ has also found someone to pair up with. Injectivity means all the relationships are monogamous. Therefore being bijective means everyone is in a monogamous relationship.
 
 In terms of arrows, being a bijection means that every dot on the left has precisely one arrow emanating from it, and every dot on the right has precisely one arrow entering it.
 
@@ -263,7 +267,7 @@ In terms of arrows, being a bijection means that every dot on the left has preci
 
 
 
-\bigskip \bigskip \bigskip \bigskip
+\bigskip \bigskip
 
 \subsection{\underline{Proving $x$jectiveness, for $x\in$\{in, sur, bi\}}}\hspace*{\fill}
 
@@ -443,6 +447,144 @@ For surjectivity, or at least to show that a function is not surjective, we need
       \underline{Part iii.} \quad The fact that $k$ is an injection follows the same reasoning as with $g$ in Part ii, and the fact that $k$ is a surjection follows the exact same reasoning as with $h$ in Part iii. Since $k$ is an injection and a surjection, it is also a bijection.
 
 \end{proof}
+
+\bigskip
+As it may be clear from the above proof that it is easier and shorter to prove that a function is not an injection or surjection. We need one counterexample to prove that a function violates their criteria.
+
+
+
+
+\bigskip \bigskip
+
+\subsubsection{\underline{Proving bijectiveness of $f(x,y)=(x+2y, 2x+3y)$}}\hspace*{\fill}
+\medskip
+
+\begin{prpn}
+      The function $f:(\mathbb{Z}\times\mathbb{Z}) \rightarrow (\mathbb{Z}\times\mathbb{Z})$ where $f(x,y) = (x+2y, 2x+3y)$ is a bijection.
+\end{prpn}
+
+\noindent \textbf{Scratch Work.} To prove $f$ is a bijection, we need to prove that $f$ is an injective and a surjective function. To show $f$ is an injection, we must show that the codomain satisfies the uniqueness criterion, which means no two arrows from the domain should point to the same element in the codomain. We can use the definition to prove injection: if $f(a_1)=f(a_2)$ implies that $a_1=a_2$ then $f$ is injective.
+
+
+To show $f$ is a surjection, we must show that every element in the codomain gets hit; that is, for an arbitrary $(a,b)\in\mathbb{Z}\times\mathbb{Z}$, there exists some $(x,y)\in\mathbb{Z}\times\mathbb{Z}$ such that $f(x,y)=(a,b)$. So, we want $f(x,y)=(a,b)$.
+
+\begin{eqnarray*}
+f(x,y) = (a,b)
+(x+2y, 2x+3y) = (a,b).
+\end{eqnarray*}
+
+For this equality to hold true, we must have
+
+\[x+2y = a \text{ and } 2x+3y = b.\]
+
+This can be viewed as a system of linear equations whereby:
+
+\[
+\left(
+      \begin{array}{@{}c|c@{}}
+            \begin{matrix}
+                  1 & 2 \\
+                  2 & 3
+            \end{matrix}
+          & \begin{matrix}
+                  a \\
+                  b
+            \end{matrix}
+      \end{array}
+\right)
+\]
+
+We can then obtain $x=-3a+b$ and $y=2a-b$. Therefore, based on this scratch work, to show $f(x,y)=(a, b)$ we need $(x,y)=(-3a+b, 2a-b)$.
+
+\begin{proof}
+      We will peove that $f$ is injective and surjective.
+      \medskip
+      \underline{Injective.} \quad Assume $f(x_1, y_1) = f(x_2, y_2)$. We aim to show $(x_1, y_1) = (x_2, y_2)$, since if $f$ is injective, then the only way $f(x_1, y_1) = f(x_2, y_2)$ would hold is if $(x_1, y_1) = (x_2, y_2)$ --- which is true provided $x_1=x_2$ and $y_1=y_2$. Notice that
+
+      \begin{align*}
+            f(x_1, y_1) &= f(x_2, y_2) \\
+            (x_1+2y_1, 2x_1+3y_1) &= (x_2+2y_2, 2x_2+3y_2).
+      \end{align*}
+
+      Thus,
+      \begin{align}
+            x_1+2y_1 &= x_2+2y_2 \tag{i} \\
+            2x_1+3y_1 &= 2x_2+3y_2. \notag
+      \end{align}
+
+      Multiplying the top equation by 2 gives
+      \begin{align*}
+            2x_1+4y_1 &= 2x_2+4y_2 \\
+            2x_1+3y_1 &= 2x_2+3y_2.
+      \end{align*}
+
+      Subtracting the bottom from the top leaves
+
+      \[ y_1 = y_2. \]
+
+      If we plug this back into equation (i) then we get:
+
+      \[x_1 + 2y_2 = x_2+2y_2.\]
+
+      Which means
+
+      \[x_1 = x_2.\]
+
+      Therefore, $(x_1, y_1) = (x_2, y_2).$
+
+
+      We have shown that if $f(x_1,y_1)=f(x_2,y_2)$, then $(x_1, y_1)=(x_2, y_2)$, proving that $f$ is an injection.
+
+      \medskip
+      \underline{Surjective.} \quad Assume any $(a,b)\in\mathbb{Z}\times\mathbb{Z}$. We wish to find some $(x,y)\in\mathbb{Z}\times\mathbb{Z}$ such that $f(x,y)=(a,b)$, and we claim\footnote{based on the scratch work.} that $(x,y)=(-3a+2b, 2a-b)$ works.
+
+
+      First, note that since $a,b\in\mathbb{Z}$, also $(-3a+2b, 2a-b)\in\mathbb{Z}$. This implies that $(x,y)\in\mathbb{Z}\times\mathbb{Z}$, as required.
+
+
+      Second, note that
+      \begin{align*}
+            f(x,y) &= f(-3a+2b, 2a-b) \\
+            &= \left[ (-3a+2b)+2(2a-b), 2(-3a+2b)+3(2a-b) \right]
+            &= (-3a+2b+4a-2b, -6a+4b+6a-3b)
+            &= (a,b).
+      \end{align*}
+
+      We showed that for any $(a,b)$ from the codomain, there exists some $(x,y)$ from the domain such that $f(x,y)=(a,b)$. Thus, $f$ is surjective.
+
+
+      Since $f$ is both an injection and a surjection, it is a bijection.
+\end{proof}
+
+
+\bigskip
+\begin{note}
+      Where we are looking at domains and codomains of finite size, if $|A| > |B|$ then it is impossible for a function $f:A\rightarrow B$ to be injective. Likewise, if $|A| < |B|$ then it is impossible for a function $f:A\rightarrow B$ to be surjective.
+
+
+      We can also think of this in terms of contrapositives: For finite sets $A$ and $B$, if $f:A\rightarrow B$ is injective, then $|A| \leq |B|$; and if $f:A\rightarrow B$ is surjective, then $|A| \geq |B|$. By combining these two, we can see that for $f$ to be an bijection, we need $|A|=|B|$.
+\end{note}
+
+
+
+
+
+
+
+
+
+\bigskip \bigskip \bigskip
+
+\subsection{\underline{Composite Functions $(f \circ g)$}}\hspace*{\fill}
+\bigskip
+
+
+
+
+
+
+
+
 
 
 \end{document}
