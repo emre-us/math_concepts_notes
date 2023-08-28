@@ -8,7 +8,7 @@
 \thanks{Gonville \verb|&| Caius College. Extremely grateful to Prof Jay Cummings as these notes made liberal use of his book 'Proofs'.}
 \date{August 2023}
 
-\newtheorem{thm}{Theorem}
+\newtheorem{thrm}{Theorem}
 \theoremstyle{definition}
 \newtheorem*{dfn}{Definition}
 \theoremstyle{definition}
@@ -544,10 +544,11 @@ We can then obtain $x=-3a+b$ and $y=2a-b$. Therefore, based on this scratch work
 
 
       Second, note that
+
       \begin{align*}
             f(x,y) &= f(-3a+2b, 2a-b) \\
-            &= \left[ (-3a+2b)+2(2a-b), 2(-3a+2b)+3(2a-b) \right]
-            &= (-3a+2b+4a-2b, -6a+4b+6a-3b)
+            &= \left[ (-3a+2b)+2(2a-b), 2(-3a+2b)+3(2a-b) \right] \\
+            &= (-3a+2b+4a-2b, -6a+4b+6a-3b) \\
             &= (a,b).
       \end{align*}
 
@@ -579,6 +580,109 @@ We can then obtain $x=-3a+b$ and $y=2a-b$. Therefore, based on this scratch work
 \subsection{\underline{Composite Functions $(f \circ g)$}}\hspace*{\fill}
 \bigskip
 
+Suppose function $g:A\rightarrow B$ and fucntion $f:B\rightarrow C$. Then the outputs of $g$ can be used as inputs of $f$.
+
+\bigskip
+\begin{center}
+\begin{tikzpicture}
+      \draw[thick] (1,0) circle [radius = 0.95] node at (-0.1, 0.5) {A};
+      \draw[thick] (5,0) circle [radius = 0.95] node at (3.9, 0.5) {B};
+      \draw[thick] (9,0) circle [radius = 0.95] node at (7.9, 0.5) {C};
+
+      \draw[fill] (1,0) circle [radius = 0.05] node[above] {$a$};
+      \draw[fill] (5,0) circle [radius = 0.05] node[above] {$g(a)$};
+      \draw[fill] (9,0) circle [radius = 0.05] node[above] {$f(g(a))$};
+
+      \draw[->] (1.1,0) to [out=340, in=200] (4.9,0) node at (3,0) {$g$};
+      \draw[->] (5.1,0) to [out=340, in=200] (8.9,0) node at (7,0) {$f$};
+\end{tikzpicture}
+\end{center}
+\bigskip
+
+If $a\in A$ then $g(a)\in B$, which is the domain of $f$, so $g(a)$ can be plugged into $f$ to get $f(g(a))$, which is $\in C$. So, by applying $g$ and then $f$, we effectively create a single function from $A$ to $C$. This function is denoted as $f \circ g$ \footnote{This is read as "$f$ composed with $g$" or, more commonly "$f$ of $g$"; and not "fog".} and called the \emph{composition} of $f$ with $g$:
+
+\bigskip
+\begin{center}
+\begin{tikzpicture}
+      \draw[thick] (1,0) circle [radius = 0.95] node at (-0.1, 0.5) {A};
+      \draw[thick] (9,0) circle [radius = 0.95] node at (7.9, 0.5) {C};
+
+      \draw[fill] (1,0) circle [radius = 0.05] node[above] {$a$};
+      \draw[fill] (9,0) circle [radius = 0.05] node[above] {$(f\circ g)(a)$};
+
+      \draw[->] (1.1,0) to [out=350, in=190] (8.9,0) node at (5,0) {$f\circ g$};
+\end{tikzpicture}
+\end{center}
+\bigskip
+
+\begin{dfn}
+      Let $A, B,$ and $C$ be sets $g:A\rightarrow B$, and $f:B\rightarrow C$. Then the \emph{composition} function is denoted $f \circ g$ and is defined as thus:
+      \[(f \circ g): A\rightarrow C \text{ where } (f \circ g)(a)=f(g(a)).  \]
+      This composition function $f\circ g$ is a function from \underline{g's domain} to \underline{f's codomain}.
+\end{dfn}
+
+
+
+
+\bigskip \bigskip
+
+\subsubsection{\underline{Proving injectiveness of $f\circ g$}}\hspace*{\fill}
+\medskip
+
+
+\begin{thrm}
+      Suppose $A, B$ and $C$ are sets, $g:A\rightarrow B$ is injective, and $f:B\rightarrow C$ is injective. Then, $f\circ g$ is injective.
+\end{thrm}
+
+\noindent \textbf{Sketch Work.} We want to show that the function $f \circ g:A\rightarrow C$ is injective. Using the definition of injective, this means we want to show that given any $a_1,a_2\in A$, $(f\circ g)(a_1) = (f\circ g)(a_2)$ implies $a_1=a_2$. In other words, if $f(g(a_1))=f(g(a_2))$ then $a_1=a_2$. To prove this, therefore, we would have to begin from the outside function towards in and show that $f$ is injective first, then that $g$ is injective. Then we use the definition of a composition to prove that $f\circ g$ is injective.
+
+
+Since the theorem says $f:B\rightarrow C$ is injective, we use the definition of injectiveness whereby for any $b_1,b_2\in B$, if $f(b_1)=f(b_2)$ then $b_1=b_2$. Since any two elements in $B$ wold satisfy this, and $g(a_1)$ and $g(a_2)$ are also elements of $B$, $f(g(a_1))=f(g(a_2))$ implies $g(a_1)=g(a_2)$.
+
+
+Similarly the theorem states that $g:A\rightarrow B$ is injective. This means for any $a_1, a_2\in A$, if $g(a_1)=g(a_2)$ then $a_1=a_2$.
+
+\begin{proof}
+      Since $(f\circ g):A\rightarrow C$, to show that $f\circ g$ is injective, we must show that for any $a_1,a_2\in A$, if $(f\circ g)(a_1)=(f\circ g)(a_2)$ then $a_1=a_2$.
+
+
+      Accordingly, assume $a_1,a_2\in A$ and $(f\circ g)(a_1)=(f\circ g)(a_2)$. If we apply the definition of composition function then we get
+      \[f(g(a_1)) = f(g(a_2)).\]
+      Since $f:B\rightarrow C$ is an injection, if $f(b_1)=f(b_2)$ for any $b_1,b_2\in B$ then $b_1=b_2$. In particular, observe that $g(a_1),g(a_2)\in B$ and $f(g(a_1))=f(g(a_2))$, and so $g(a_1)=g(a_2)$.
+
+
+      Likewise, since $g:A\rightarrow B$ is injective, and we just showed that $g(a_1)=g(a_2)$ where $a_1,a_2\in A$. This implies that $a_1=a_2$.
+
+
+      We have shown that for $a_1,a_2\in A$, if $(f\circ g)(a_1)=(f\circ g)(a_2)$, then $a_1=a_2$. Thus, $(f\circ g)$ is an injection.
+\end{proof}
+
+
+
+
+
+\bigskip \bigskip
+
+\subsubsection{\underline{Proving surjectiveness of $f\circ g$}}\hspace*{\fill}
+\medskip
+
+
+\begin{thrm}
+      Suppose $A, B$ and $C$ are sets, $g:A\rightarrow B$ is surjective, and $f:B\rightarrow C$ is surjective. Then, $f\circ g$ is surjective.
+\end{thrm}
+
+\noindent \textbf{Sketch Work.} Just like what we did in the last proof, we begin with the outer function and go inwards. In this case, surjectiveness means that for any $c\in C$ there exists some $a\in A$ such that $(f\circ g)(a)=c$.
+
+\begin{proof}
+      Assume $c \in C$. Since $f:B\rightarrow C$ is surjective and $c\in C$, there must be some $b\in B$ such that $f(b)=c$. Next, since $b\in B$ and $g:A\rightarrow B$ is surjective, there must be some $a\in A$ such that $g(a)=b$.
+      Accordingly, for an arbitrary $c\in C$ we have found an $a\in A$ such that
+      \[(f\circ g)(a) = f(g(a)) = f(b) = c, \]
+      completing the proof.
+\end{proof}
+\bigskip
+\emph{Corollary} is a result that follows quickly from previous results. The previous two theorems give the following corollary:
+\bigskip
+\noindent \textbf{Corollary.} Suppose $A,B$ and $C$ are sets, $g:A\rightarrow B$ is bijective, and $f:B\rightarrow C$ is bijective. Then $f\circ g$ is bijective.
 
 
 
@@ -586,6 +690,128 @@ We can then obtain $x=-3a+b$ and $y=2a-b$. Therefore, based on this scratch work
 
 
 
+
+
+
+\bigskip \bigskip \bigskip
+
+\subsection{\underline{Invertibility}}\hspace*{\fill}
+\bigskip
+
+Similar to \emph{multiplicative identity} of 1 in the reals where $a\cdot 1=a$ for all $a\in\mathbb{R}$, and to \emph{additive identity} of 0, where $a+0=a$ for all $a\in\mathbb{R}$, there is also an \emph{identity function} which is analogous to 1 and 0 in the reals in that when you apply to any function, the function is unchanged. The difference is that the operation is a function composition instead of addition or multiplication. In this way, many functions will also have inverses.
+
+\begin{dfn}
+      For a set $A$, the \emph{identity function} on $A$ is the function
+      \[i_A:A\rightarrow A \text{ where } i_A(x)=x \text{ for every } x\in A.\]
+      The inverse of a function $f:A\rightarrow B$, if it exists, is the function $f^{-1}:B\rightarrow A$ such that $f^{-1}\circ f=i_A$ and $f\circ f^{-1}=i_B$.
+\end{dfn}
+
+
+For example, if $f:\mathbb{R}\rightarrow\mathbb{R}$ where $f(x)=x+1$, then $f^{-1}:\mathbb{R}\rightarrow\mathbb{R}$ is the function $f^{-1}(x)=x-1$. To see this, note that
+\[(f\circ f^{-1})(x) = f(f^{-1}(x)) = f(x-1)+1 = x, \]
+showing that $(f\circ f^{-1})(x)=x$, meaning that it is equal to the identity function $(i_\mathbb{R}(x)=x)$ on $\mathbb{R}$. Likewise,
+\[(f^{-1}\circ f)(x) = f^{-1}(f(x)) = f^{-1}(x+1) = (x+1)-1 = x. \]
+
+\bigskip
+Here is another example:
+\medskip
+If $f:[0,1]\rightarrow [0,2]$ where $f(x)=2x$, then $f^{-1}:[0,2]\rightarrow [0,1]$ is the function $f^{-1}(x)=\frac{1}{2}x$.
+
+
+Note that for a function to have an inverse, it \emph{must} be a bijection. That is, it must be an injection, \emph{and} a surjection. Recall in the definitions section above we defined when a function is not an injection and when a function is not a surjection. The diagrams are reproduced below for convenience:
+
+\begin{center}
+\begin{tabular}{l c}
+\begin{tikzpicture}
+            \draw[thick] (2,0) ellipse (0.75cm and 1.5cm) node at (1.25, 1.25){A};
+            \draw[thick] (4,0) ellipse (0.75cm and 1.5cm) node at (3.25, 1.25){B};
+
+            \draw[fill] (2, 1) circle [radius=0.05] node[left]{a};
+            \draw[fill] (2, 0) circle [radius=0.05] node[left]{b};
+            \draw[fill] (2, -1) circle [radius=0.05] node[left]{c};
+
+            \draw[fill] (4, 1) circle [radius=0.05] node[right]{w};
+            \draw[fill] (4, 0.35) circle [radius=0.05] node[right]{x};
+            \draw[fill] (4, -0.35) circle [radius=0.05]node[right]{y};
+            \draw[fill] (4, -1) circle [radius=0.05] node[right]{z};
+
+            \draw[->] (2,1) to (3.9, 0.3);
+            \draw[->] (2,0) to (3.9,-1);
+            \draw[->] (2,-1) to (3.9, 0.3);
+      \end{tikzpicture}
+      &
+      \begin{tikzpicture}
+            \draw[thick] (6,0) ellipse (0.75cm and 1.5cm) node at (5.25, 1.25){A};
+            \draw[thick] (8,0) ellipse (0.75cm and 1.5cm) node at (7.25, 1.25){B};
+
+            \draw[fill] (6, 1) circle [radius=0.05] node[left]{w};
+            \draw[fill] (6, 0.35) circle [radius=0.05] node[left]{x};
+            \draw[fill] (6, -0.35) circle [radius=0.05] node[left]{y};
+            \draw[fill] (6, -1) circle [radius=0.05] node[left]{z};
+
+            \draw[fill] (8, 1) circle [radius=0.05] node[right]{k};
+            \draw[fill] (8, 0) circle [radius=0.05] node[right]{l};
+            \draw[fill] (8, -1) circle [radius=0.05] node[right]{m};
+
+            \draw[->] (6,1) to (7.9, 0);
+            \draw[->] (6,0.35) to (7.9,0);
+            \draw[->] (6, -0.35) to (7.9, -1);
+            \draw[->] (6, -1) to (7.9, 0);
+      \end{tikzpicture} \\
+    Not an injection from $A$ to $B$
+    &
+    Not a surjection from $A$ to $B$
+\end{tabular}
+\end{center}
+
+\bigskip
+In the left diagram above, $f^{-1}$ cannot send $x\in B$ to both $a$ and $c$ since a function has to send everything to only one destination. This is why $f$ must be injective in order for $f^{-1}$ to exist.
+
+
+Similarly, in the right diagram above, $f^{-1}$ can't send $k\in B$ anywhere but a function has to send everything somewhere. This is why $f$ must be surjective in otder for $f^{-1}$ to exist.
+
+
+The converse is also true. That is, every bijection is invertible.
+
+\begin{thrm}
+      A function $f:A\rightarrow B$ is invertible if and only if $f$ is a bijection.
+\end{thrm}
+
+\begin{proof}
+      First suppose that $f:A\rightarrow B$ is invertible. We will prove that $f$ is both an injection and a surjection, which will prove that $f$ is therefore a bijection.
+
+
+      To see that $f$ is a surjection, choose any $b\in B$. We aim to find an $a\in A$ such that $f(a)=b$. To this end, let $a=f^{-1}(b)$, which exists and is in $A$ because $f^{-1}:B\rightarrow A$. Observe that the definition of an invertible function implies
+      \[f(a) = f(f^{-1}(b)) = b. \]
+      This proves that $f$ is surjection.
+
+
+      To see that $f$ is an injection, let $a_1,a_2\in A$ and assume $f(a_1)=f(a_2)$. Note that $f(a_1)$, as well as $f(a_2)$ by virtue of being equal to $f(a_1)$, is an element of B due to the fact that $f:A\rightarrow B$. And so, since $f^{-1}:B\rightarrow A$, we may apply $f^{-1}$ to both sides:
+      \begin{align*}
+            f(a_1)&=f(a_2) \\
+            f^{-1}(f(a_1))&=f^{-1}(f(a_2)) \\
+            a_1&=a_2,
+      \end{align*}
+      by the definition of inverse. Thus, $f$ is an injection. Since it is also surjection, it must be a bijection. This concludes the forward direction of the theorem.
+
+      \bigskip
+      As for the backwards direction, assume that $f$ is a bijection. For $b\in B$, we will now define $f^{-1}(b)$ as the following:
+      \[f^{-1}(b)=a \text{ if } f(a)=b.\]
+      That is we are defining $f^{-1}$ to act as we would want an inverse from $B$ to $A$ to act without yet claiming that $f^{-1}$ is a function.
+
+
+      Our goal now is to demonstrate that this definition of $f^{-1}$ satisfies the conditions to be a function, which would prove that $f$ is invertible. To do so, recall that to be a function there is an existence condition whereby $f^{-1}(b)$ must be equal to some $a\in A$, and a uniqueness condition whereby $f^{-1}(b)$ must be equal to only one $a\in A$. We will check these separately:
+      \medskip
+      \underline{Existence:} Let $b\in B$. Since $f$ is surjective, there must be some $a\in A$ such that $f(a)=b$. Hence, by our definition of $f^{-1}$, we have $f^{-1}(b)=a$. We have shown that for every $b\in B$ there exists at least one $a\in A$ for which $f^{-1}(b)=a$, which concludes the existence portion of this argument.
+      \smallskip
+      \underline{Uniqueness:} Suppose $f^{-1}(b)=a_1$ and $f^{-1}(b)=a_2$, for some $b\in B$ and $a_1,a_2\in A$. By the definition of $f^{-1}$, this means that $f(a_1)=b$ and $f(a_2)=b$. However, since $f$ is injective, this means that $a_1=a_2$. We have shown that $f^{-1}(b)$ cannot be equal to two different elements of $A$, which concludes the uniqueness portion of this argument.
+
+
+      Combined, these two parts show that $f^{-1}:B\rightarrow A$ is a function. Moreover, by the way we defined $f^{-1}$, we see that $f^{-1}(f(a))=a$ for all $a\in A$, and $f(f^{-1}(b))=b$ for all $b\in B$. Thus, by the definition of the inverse, $f^{-1}$ is the inverse function of $f$, proving that $f$ is invertible.
+
+
+      We have proved the forwards and backwards directions of the Theorem which completes the proof.
+\end{proof}
 
 
 \end{document}
