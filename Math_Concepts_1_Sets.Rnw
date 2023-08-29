@@ -44,52 +44,49 @@
 
 \section{\textbf{Definitions}}
 
-\begin{dfn}
-\boxed{theorem} \quad A \emph{theorem} is an important result (ie, sentence or mathematical expression that is true) that has been proved.
-\end{dfn}
 
-\begin{dfn}
-\boxed{proposition} \quad A \emph{proposition} is a result that is less important than a theorem. It has also been proved.
-\end{dfn}
+\noindent \boxed{theorem} \quad A \emph{theorem} is an important result (ie, sentence or mathematical expression that is true) that has been proved. % '\quad' is for spacing, '\hspace{12pt}' works similarly.
 
-\begin{dfn}
-\boxed{lemma} \quad A \emph{lemma} is typically a result that is proved before a proposition or a theorem, and is used to prove the subsequent propositon or theorem.
-\end{dfn}
+\medskip
+\noindent \boxed{proposition} \quad A \emph{proposition} is a result that is less important than a theorem. It has also been proved.
 
-\begin{dfn}
-\boxed{corollary} \quad A \emph{corollary} is a result that is proved after a proposition or a theorem, and which follows quickly from a the theorem or proposition. it is often a special case of the proposition or theorem.
-\end{dfn}
 
-\begin{dfn}
-\boxed{conjecture} \quad A \emph{conjecture} is a statement someone guesses to be true, although they are not yet able to prove or disprove it.
-\end{dfn}
+\medskip
+\noindent \boxed{lemma} \quad A \emph{lemma} is typically a result that is proved before a proposition or a theorem, and is used to prove the subsequent propositon or theorem.
 
-\begin{dfn}
-\boxed{\in} \quad If $x$ is an element of a set $A$, we write $x \in A$. This is read "$x$ in $A$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
-\end{dfn}
 
-\begin{dfn}
-\boxed{\not\in} \quad If $x$ is not an element of a set B "$x \not\in B$" means that $x$ is not an element of $B$.
-\end{dfn}
+\medskip
+\noindent \boxed{corollary} \quad A \emph{corollary} is a result that is proved after a proposition or a theorem, and which follows quickly from a the theorem or proposition. it is often a special case of the proposition or theorem.
 
-\begin{dfn}
-\boxed{\mathbb{N}} \quad The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\}\footnote{Note that it does not include 0.} For e.g.,
+
+\medskip
+\noindent \boxed{conjecture} \quad A \emph{conjecture} is a statement someone guesses to be true, although they are not yet able to prove or disprove it.
+
+
+\medskip
+\noindent \boxed{\in} \quad If $x$ is an element of a set $A$, we write $x \in A$. This is read "$x$ in $A$".
+
+
+\medskip
+\noindent \boxed{\not\in} \quad If $x$ is not an element of a set B "$x \not\in B$" means that $x$ is not an element of $B$.
+
+
+\medskip
+\noindent \boxed{\mathbb{N}} \quad The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the set \{1, 2, 3, \dots\}\footnote{Note that it does not include 0.} For e.g.,
     \begin{itemize}
           \item $\{n^2:n \in \mathbb{N} \} = \{1, 4, 9, 16, 25, \dots\}$
           \item $\{n \in \mathbb{N} : 6|n\} = \{6, 12, 18, 24, 30, \dots\}$
     \end{itemize}
-\end{dfn}
 
-\begin{dfn}
-\boxed{\mathbb{Z}} \quad The set of \emph{integers}, denoted $\mathbb{Z}$ is the set \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}. For e.g.,
+\medskip
+\noindent \boxed{\mathbb{Z}} \quad The set of \emph{integers}, denoted $\mathbb{Z}$ is the set \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots \}. For e.g.,
     \begin{itemize}
           \item $\{|n|:n \in \mathbb{Z} \} = \{0, 1, 2, 3, \dots\}$
           \item $\{n \in \mathbb{Z}: n\ is\ even\} = \{\dots, -6, -4, -2, 0, 2, 4, 6, \dots \}$ % putting '\' after 'n' and 'is' creates a small horizontal space. Without it the printout would be 'niseven'
     \end{itemize}
-\end{dfn}
 
-\begin{dfn}
-\boxed{\mathbb{Q}} \quad The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is the set $\mathbb{Q} = \{\frac{a}{b}: a,b \in \mathbb{Z}, b \neq 0 \}$ \\
+\medskip
+\noindent \boxed{\mathbb{Q}} \quad The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is the set $\mathbb{Q} = \{\frac{a}{b}: a,b \in \mathbb{Z}, b \neq 0 \}$
 This can be read as the following:
     \begin{center}
     \begin{tabularx}{0.95\textwidth}{ % table width is set to 0.95\textwidth, which is 95% of the document's text width.
@@ -106,7 +103,6 @@ This can be read as the following:
       The rational numbers & are defined to be & the set of all & fractions of the form $\frac{a}{b}$ & such that & a and b are integers & and & b is nonzero \\
     \end{tabularx}
     \end{center}
-\end{dfn}
 
 % here we could use tabular instead of tabularx but it would run longer than the page width. tabularx is easier to adjust for that.
 % \begin{tabular}{c | c | c | c | c | c | c | c } % Each letter (c, r, or l) represents a column. They stand for centered, right-justified, and left-justified. Each | draws a vertical line separating the columns.
@@ -117,8 +113,8 @@ This can be read as the following:
 
 So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{4}{6}$ and $\frac{6}{9}$ and infinitely more representation of this same number. However, the set itself only keeps one of each element, so the duplicates of each rational number would not be included in the set.
 
-\begin{dfn}
-\boxed{\mathbb{R}} \quad The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
+\medskip
+\noindent \boxed{\mathbb{R}} \quad The set of \emph{real numbers}, denoted $\mathbb{R}$, is difficult to define (it would take dozens of pages to rigorously define it) but it is effectively all the numbers you can write with a decimal point. However, we can use $\mathbb{R}$ and set notation to generate and define other familiar sets:
 
     \begin{itemize}
       \item The set of 2 x 2 real matrices can be written:
@@ -137,41 +133,34 @@ So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{
             This applies even if $a = -\infty$ and/or $b = \infty$. The definitions for the half open intervals, (a,b] and [a, b), are similar. Also note that the           open interval notation (a,b) is the same as an ordered pair, so it will be determined which is which from context.
     \end{itemize}
 
-\end{dfn}
-
-\begin{dfn}
-\boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$. For e.g.,
+\medskip
+\noindent \boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$. For e.g.,
 \[\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C} \]
 where $\mathbb{C}$ is complex numbers.
-\end{dfn}
 
-\begin{dfn}
-      \boxed{\cup} \quad The \emph{union} of sets $A$ and $B$ is the set $A \cup B = \{x : x \in A$ or $x \in B \}$.
+\medskip
+\noindent \boxed{\cup} \quad The \emph{union} of sets $A$ and $B$ is the set $A \cup B = \{x : x \in A$ or $x \in B \}$.
             \begin{itemize}
                   \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the union of all of them is the set $A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n = \{x : x \in A_i \text{for \underline{some}}\ i \} $. This set is also denoted:
                         \[\bigcup^n_{i=1}A_i = A_1 \cup A_2 \cup A_3 \cup \dots \cup A_n \]
             \end{itemize}
-\end{dfn}
 
-\begin{dfn}
-      \boxed{\cap} \quad The \emph{intersection} of sets $A$ and $B$ is the set $A \cap B = \{x : x \in A$ and $x \in B \}$.
+\medskip
+\noindent \boxed{\cap} \quad The \emph{intersection} of sets $A$ and $B$ is the set $A \cap B = \{x : x \in A$ and $x \in B \}$.
             \begin{itemize}
                   \item If $A_1, A_2, A_3, \dots, A_n$ are all sets, then the intersection of all of them is the set $A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n = \{x : x \in A_i \text{for \underline{all}}\ i \} $. This set is also denoted:
                         \[\bigcap^n_{i=1}A_i = A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n \]
             \end{itemize}
-\end{dfn}
 
 
 Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesian product} which are analogous to the operations of addition, subtraction, and multiplications for numbers. Also, just as taking the absolute value of a number tells you how big it is, in set theory one can determine a set's \emph{cardinality}. These are discussed below.
 
+\medskip
+\noindent \boxed{U} \quad If $A \subseteq U$ then $U$ is called a \emph{universal set} of $A$.
 
-\begin{dfn}
-\boxed{U} \quad If $A \subseteq U$ then $U$ is called a \emph{universal set} of $A$.
-\end{dfn}
+\medskip
+\noindent \boxed{\setminus} \quad The \emph{subtraction} of $B$ from $A$ when both are in $U$ is $A \setminus B = \{x: x \in A \text{ and } x \not\in B \}$. % \setminus command is in amssym package
 
-\begin{dfn}
-\boxed{\setminus} \quad The \emph{subtraction} of $B$ from $A$ when both are in $U$ is $A \setminus B = \{x: x \in A \text{ and } x \not\in B \}$. % \setminus command is in amssym package
-\end{dfn}
 
 \begin{center}
 \begin{tabular}{c}
@@ -182,9 +171,8 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
 \end{tabular}
 \end{center}
 
-\begin{dfn}
-\boxed{A^\complement} \quad The \emph{complement} of $A$ in $U$ is $A^\complement = U \setminus A$.
-\end{dfn}
+\medskip
+\noindent \boxed{A^\complement} \quad The \emph{complement} of $A$ in $U$ is $A^\complement = U \setminus A$.
 
 \begin{center}
 \begin{tabular}{c}
@@ -195,8 +183,8 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
 \end{tabular}
 \end{center}
 
-\begin{dfn}
-\boxed{\mathcal{P}(A)} The \emph{power set} of $A$ is $\mathcal{P}(A) = \{X : X \subseteq A \}$ where every element of $\mathcal{P}(A)$ is a set itself, just like a box can contain other boxes. What the definition is saying is that if $X$ is a subset of $A$, then $X$ is an element of $\mathcal{P}(A)$.
+\medskip
+\noindent \boxed{\mathcal{P}(A)} The \emph{power set} of $A$ is $\mathcal{P}(A) = \{X : X \subseteq A \}$ where every element of $\mathcal{P}(A)$ is a set itself, just like a box can contain other boxes. What the definition is saying is that if $X$ is a subset of $A$, then $X$ is an element of $\mathcal{P}(A)$.
       \begin{itemize}
             \item Here is an example: If $A = \{1, 3, 5 \}$ then the power set is \\
                   $\mathcal{P}(A) = \{ \{\emptyset \}, \{1\}, \{3\}, \{5\}. \{1, 3\}, \{1, 5\}, \{3, 5\}, \{1, 3, 5 \} \}$
@@ -204,20 +192,20 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
                   \mathcal{P}(\mathcal{P}(\emptyset)) = \{\emptyset, \{\emptyset \} \}  \\
                   \mathcal{P}(\mathcal{P}(\mathcal{P}(\emptyset))) = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}, \{\{\emptyset\}\} \} $
       \end{itemize}
-\end{dfn}
 
-\begin{dfn}
-\boxed{|A|} \quad The \emph{cardinality} of $A$ is the number of elements in $A$.
+
+\medskip
+\noindent \boxed{|A|} \quad The \emph{cardinality} of $A$ is the number of elements in $A$.
       \begin{itemize}
             \item Here is an example: If $A = \{1, 3, 5 \}$ then $|A|$ is 3 and $|\mathcal {P}(A)| = 8 = 2^3 $.
       \end{itemize}
       \begin{note}
             Note that the cardinality of $\mathbb{N}$ is referred to as $\aleph_0$, which is read "aleph naught".
       \end{note}
-\end{dfn}
 
-\begin{dfn}
-\boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A \text{ and } b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
+
+\medskip
+\noindent \boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A \text{ and } b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
       \begin{itemize}
             \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\alpha, \beta \} $ then
                   \[ A \times B = \{(1, \alpha), (1, \beta), (3, \alpha), (3, \beta), (5, \alpha), (5, \beta) \}. \]
@@ -252,7 +240,7 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
                   \end{tikzpicture} \]
 
       \end{itemize}
-\end{dfn}
+
 
 
 
