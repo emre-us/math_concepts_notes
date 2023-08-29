@@ -44,6 +44,25 @@
 
 \section{\textbf{Definitions}}
 
+\begin{dfn}
+\boxed{theorem} \quad A \emph{theorem} is an important result (ie, sentence or mathematical expression that is true) that has been proved.
+\end{dfn}
+
+\begin{dfn}
+\boxed{proposition} \quad A \emph{proposition} is a result that is less important than a theorem. It has also been proved.
+\end{dfn}
+
+\begin{dfn}
+\boxed{lemma} \quad A \emph{lemma} is typically a result that is proved before a proposition or a theorem, and is used to prove the subsequent propositon or theorem.
+\end{dfn}
+
+\begin{dfn}
+\boxed{corollary} \quad A \emph{corollary} is a result that is proved after a proposition or a theorem, and which follows quickly from a the theorem or proposition. it is often a special case of the proposition or theorem.
+\end{dfn}
+
+\begin{dfn}
+\boxed{conjecture} \quad A \emph{conjecture} is a statement someone guesses to be true, although they are not yet able to prove or disprove it.
+\end{dfn}
 
 \begin{dfn}
 \boxed{\in} \quad If $x$ is an element of a set $A$, we write $x \in A$. This is read "$x$ in $A$". % '\quad' is for spacing, '\hspace{12pt}' works similarly.
@@ -121,7 +140,9 @@ So the definition for \emph{rational numbers} includes $\frac{2}{3}$ and $\frac{
 \end{dfn}
 
 \begin{dfn}
-\boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$.
+\boxed{\subseteq} \quad Suppose $A$ and $B$ are sets. If every element in $A$ is also an element of $B$, then $A$ is a \emph{subset} of $B$, which is denoted $A \subseteq B$. For e.g.,
+\[\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C} \]
+where $\mathbb{C}$ is complex numbers.
 \end{dfn}
 
 \begin{dfn}
@@ -191,12 +212,12 @@ Set operations include \emph{unions}, \emph{set subtraction}, and \emph{Cartesia
             \item Here is an example: If $A = \{1, 3, 5 \}$ then $|A|$ is 3 and $|\mathcal {P}(A)| = 8 = 2^3 $.
       \end{itemize}
       \begin{note}
-            Note that he cardinality of $\mathbb{N}$ is referred to as $\aleph_0$, which is read "aleph naught".
+            Note that the cardinality of $\mathbb{N}$ is referred to as $\aleph_0$, which is read "aleph naught".
       \end{note}
 \end{dfn}
 
 \begin{dfn}
-\boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A and b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
+\boxed{A \times B} \quad The \emph{Cartesian product} of $A$ and $B$ is $A \times B = \{(a,b): a \in A \text{ and } b \in B \} $. This can be thought of as a way to "multiply" sets. The product of A and B creates a new set with each element forming an ordered pair (a,b).
       \begin{itemize}
             \item Here is an example: If $A = \{1, 3, 5 \}$ and $B = \{\alpha, \beta \} $ then
                   \[ A \times B = \{(1, \alpha), (1, \beta), (3, \alpha), (3, \beta), (5, \alpha), (5, \beta) \}. \]
@@ -408,7 +429,7 @@ Don't forget, for proof what we are trying to show is that if $x \in A$ then $x 
 
 
 
-\bigskip \bigskip \bigskip \bigskip
+\bigskip \bigskip
 
 \subsection{\underline{Proving $A = B$}}\hspace*{\fill}
 
@@ -501,7 +522,7 @@ Using these observations we can prove this in two different ways:
       \indent Assume that $A$ and $B$ are sets and $\mathcal{P}(A) \subseteq \mathcal{P}(B)$. Let $x \in A$. \\
       \indent This implies that $\{x\} \subseteq A$ by the definition of a subset, which itself implies $\{x\} \in \mathcal{P}(A)$ by the definition of a power set. \\
       \indent Since we assume $\mathcal{P}(A) \subseteq \mathcal{P}(B)$, this means $\{x\} \in \mathcal{P}(B)$ by the definition of a subset. \\
-      \indent By the definitions of a subset and a power set, $\{x\} \in \mathcal{P}(B)$ implies $\{x\} \in \subseteq \mathcal{P}(B)$, which in turn means that $x \in B$. \\
+      \indent By the definitions of a subset and a power set, $\{x\} \in \mathcal{P}(B)$ implies $\{x\} \subseteq \mathcal{P}(B)$, which in turn means that $x \in B$. \\
       \indent This shows that $x \in A$ implies $x \in B$, which means $A \subseteq B$.
 \end{proof}
 
@@ -616,7 +637,7 @@ There is actually another, and quicker, way of proving the \emph{De Morgan's Law
 
 
 
-\bigskip \bigskip \bigskip \bigskip
+\bigskip \bigskip
 
 \subsection{\underline{Proving $C = A \cap B$}}
 
