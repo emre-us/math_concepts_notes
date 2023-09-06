@@ -134,10 +134,69 @@ When the dimension of the linear surface is one less than the dimension of the s
 \begin{proof}
       To prove part (i) we will make use of the definition of vector addition and the fact that addition of real numbers is commutative:
       \[
-                \vec{v}+\vec{w} = (v_1+w_1, v_2+w2,\dots,v_n+w_n)
+                \vec{v}+\vec{w} = (v_1+w_1, v_2+w_2,\dots,v_n+w_n)
                 = (w_1+v_1, w_2+v_2, \dots, w_n+v_n) = \vec{w}+\vec{v}.
            \]
       Proof of part (ii) follows a similar pattern making use of the definition of vector addition and the property of real number addition.
+\end{proof}
+
+
+Another basic operation on vectors called \emph{scalar multiplication} changes a vector's length and can reverse its direction.
+
+\begin{dfn}
+      Suppose $\vec{v} = (v_1, v_2,\dots,v_n) \in\mathbb{R}^{n}$ and $c\in\mathbb{R}$, is a scalar. Then the \emph{scalar multiplication} of real number $c$ and vector $\vec{v}$ is:
+      \[ c\vec{v}= c \cdot \left( \begin{smallmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{smallmatrix} \right) = \left( \begin{smallmatrix} cv_1 \\ cv_2 \\ \vdots \\ cv_n \end{smallmatrix}  \right).  \]
+\end{dfn}
+
+\begin{note}
+      It should be remembered that scalar multiplication and scalar product do not refer to the same operation.
+\end{note}
+
+Two special cases of scalar multiplication stand out:
+\begin{itemize}
+      \item If $c=0$ then $c\vec{v}$ is called the \emph{zero vector} denoted by $\vec{0}$ (or \textbf{0}), where all the entries (or components) are all zeros.
+      \item If $c=-1$ then $c\vec{v}$, denoted as $-\vec{v}$, whose entries (or components) are the negatives of $\vec{v}$'s components.
+\end{itemize}
+
+
+\begin{wrapfigure}{r}{0.20\textwidth}
+      \begin{tikzpicture}
+            \draw[step=0.5cm, gray!50, very thin](0,0) grid (1.49,1.49);
+            \draw[thin, gray, ->] (0,0)--(1,0.5) node[below] {$\vec{v}$};
+            \draw[thin, gray, ->] (0,0)--(0.5,1) node[left] {$\vec{w}$};
+            \draw[thin, gray, dashed, -] (1,0.5)--(1.5,1.5);
+            \draw[thin, gray, dashed, -] (0.5,1)--(1.5,1.5);
+            \draw[thin, gray, ->] (0,0)--(1.5,1.5) node[right] at (1.5, 1.5) {$\vec{v}+\vec{w}$};
+            \draw[thick, ->] (0.5,1)--(1,0.5) node[right] at (0.75, 0.80) {$\vec{v}-\vec{w}$};
+      \end{tikzpicture}
+\end{wrapfigure}
+Using the second special case we can then construct \emph{vector subtraction}:
+\[ \vec{v}-\vec{w} = \vec{v} + -1\cdot\vec{w}.  \]
+
+This subtraction has a geometric interpretation such that $\vec{v}-\vec{w}$ is the vector pointing from the head of $\vec{w}$ to the head of $\vec{v}$ when both $\vec{v}$ and $\vec{w}$ are in canonical, or standard position.
+
+
+With scalar multiplication, we can expand the commutativity and associativity of vector addition to the following:
+\begin{thrm}
+Suppose $\vec{v},\vec{w}\in\mathbb{R}^{n}$ are vectors and $c,d\in\mathbb{R}$ are scalars. Then the following properties hold:
+      \begin{itemize}
+            \item $c(\vec{v}+\vec{w}) = c\vec{v}+c\vec{w}$,
+            \item $(c+d)\vec{v} = c\vec{v}+d\vec{v}$, and
+            \item $c(d\vec{v}) = (cd)\vec{v}$.
+      \end{itemize}
+\end{thrm}
+
+\begin{proof}
+      To prove the first property, note that we can use the definition of vector addition to add the vectors inside the paranthesis, then use the definition of scalar multiplication as follows.
+      \begin{align*}
+            c(\vec{v}+\vec{w}) = c\cdot \left( \begin{smallmatrix} v_1+w_1 \\ v_2+w_2 \\ \vdots \\ v_n+w_n \end{smallmatrix} \right)
+            =\left( \begin{smallmatrix} c(v_1+w_1) \\ c(v_2+w_2) \\ \vdots \\ c(v_n+w_n) \end{smallmatrix} \right)
+            =\left( \begin{smallmatrix} cv_1+cw_1 \\ cv_2+cw_2 \\ \vdots \\ cv_n+cw_n \end{smallmatrix} \right)
+            &=\left( \begin{smallmatrix} cv_1 \\ cv_2 \\ \vdots \\ cv_n \end{smallmatrix} \right) + \left( \begin{smallmatrix} cw_1 \\ cw_2 \\ \vdots \\ cw_n \end{smallmatrix} \right) \\
+            &=c\cdot \left( \begin{smallmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{smallmatrix} \right) + c\cdot \left( \begin{smallmatrix} w_1 \\ w_2 \\ \vdots \\ w_n \end{smallmatrix} \right)
+            =c\vec{v}+c\vec{w}.
+      \end{align*}
+      The proofs of the other two properties would follow a similar pattern of reasoning that utilizes the definitions of vector addition and scalar multiplication.
 \end{proof}
 
 \end{document}
