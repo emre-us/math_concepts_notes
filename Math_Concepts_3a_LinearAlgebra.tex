@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart} %amscd adds the macros for the commutative diagram environment
 
-\usepackage{fullpage, amsmath, amssymb, amsthm, enumitem, tabularx, multirow, multicol, tikz, venndiagram, graphicx, caption, xcolor, array, tabularx, wrapfig, nicefrac}
+\usepackage{fullpage, amsmath, amssymb, amsthm, enumitem, tabularx, multirow, multicol, tikz, venndiagram, graphicx, caption, xcolor, array, tabularx, wrapfig, nicefrac, tcolorbox}
 \renewcommand{\baselinestretch}{1.15}
 
 \theoremstyle{plain}
@@ -17,6 +17,8 @@
 
 \theoremstyle{definition}
 \newtheorem*{lemma}{Lemma}
+
+
 
 \usepackage{Sweave}
 \begin{document}
@@ -101,8 +103,8 @@ When the dimension of the linear surface is one less than the dimension of the s
 
 
 
-\bigskip
-\begin{wrapfigure}{r}{0.35\textwidth}
+\medskip
+\begin{wrapfigure}[5]{r}{0.35\textwidth}
       \begin{tabular}{r r}
             \begin{tikzpicture}
                   \draw[step=0.5cm, gray!50, very thin](0,0) grid (1.49,1.49);
@@ -121,33 +123,43 @@ When the dimension of the linear surface is one less than the dimension of the s
             \end{tikzpicture}
       \end{tabular}
 \end{wrapfigure}
-      In general, if we see $\vec{v}$ and $\vec{w}$ as displacements, then $\vec{v}+\vec{w}$ is a combined displacement. This can be represented geometrically in two different ways: either as a head-to-tail or in standard position with the parallelogram rule as shown on the right.
 
 
-\begin{thrm}
-      Suppose $\vec{v}, \vec{w}, \vec{x} \in\mathbb{R}^{n}$ are vectors. Then the following properties hold:
-      \begin{enumerate}
-            \item[i] Commutativity: $\vec{v}+\vec{w} = \vec{w}+\vec{v}$
-            \item[ii] Associativity: $(\vec{v}+\vec{w})+\vec{x} = \vec{v}+(\vec{w}+\vec{x})$.
-      \end{enumerate}
-\end{thrm}
+      In general, if we see $\vec{v}$ and $\vec{w}$ as displacements, then $\vec{v}+\vec{w}$ is a combined displacement.
 
-\begin{proof}
-      To prove part (i) we will make use of the definition of vector addition and the fact that addition of real numbers is commutative:
-      \[
-                \vec{v}+\vec{w} = (v_1+w_1, v_2+w_2,\dots,v_n+w_n)
-                = (w_1+v_1, w_2+v_2, \dots, w_n+v_n) = \vec{w}+\vec{v}.
-           \]
-      Proof of part (ii) follows a similar pattern making use of the definition of vector addition and the property of real number addition.
-\end{proof}
+      \smallskip This can be represented geometrically in two different ways: either as a head-to-tail or in standard position with the parallelogram rule as shown on the right.
 
+
+
+\begin{tcolorbox}
+      \begin{thrm}
+            Suppose $\vec{v}, \vec{w}, \vec{x} \in\mathbb{R}^{n}$ are vectors. Then the following properties hold:
+            \begin{enumerate}
+                  \item[(i)] Commutativity: $\vec{v}+\vec{w} = \vec{w}+\vec{v}$
+                  \item[(ii)] Associativity: $(\vec{v}+\vec{w})+\vec{x} = \vec{v}+(\vec{w}+\vec{x})$.
+            \end{enumerate}
+      \end{thrm}
+
+\tcblower
+
+      \begin{proof}
+            To prove part (i) we will make use of the definition of vector addition and the fact that addition of real numbers is commutative:
+            \[
+                      \vec{v}+\vec{w} = (v_1+w_1, v_2+w_2,\dots,v_n+w_n)
+                      = (w_1+v_1, w_2+v_2, \dots, w_n+v_n) = \vec{w}+\vec{v}.
+                 \]
+            Proof of part (ii) follows a similar pattern making use of the definition of vector addition and the property of real number addition.
+      \end{proof}
+\end{tcolorbox}
 
 Another basic operation on vectors called \emph{scalar multiplication} changes a vector's length and can reverse its direction.
 
+\begin{tcolorbox}[colback=yellow!5!white]
 \begin{dfn}
       Suppose $\vec{v} = (v_1, v_2,\dots,v_n) \in\mathbb{R}^{n}$ and $c\in\mathbb{R}$, is a scalar. Then the \emph{scalar multiplication} of real number $c$ and vector $\vec{v}$ is:
       \[ c\vec{v}= c \cdot \left( \begin{smallmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{smallmatrix} \right) = \left( \begin{smallmatrix} cv_1 \\ cv_2 \\ \vdots \\ cv_n \end{smallmatrix}  \right).  \]
 \end{dfn}
+\end{tcolorbox}
 
 \begin{note}
       It should be remembered that scalar multiplication and scalar product do not refer to the same operation.
@@ -176,16 +188,19 @@ Using the second special case we can then construct \emph{vector subtraction}:
 
 This subtraction has a geometric interpretation such that $\vec{v}-\vec{w}$ is the vector pointing from the head of $\vec{w}$ to the head of $\vec{v}$ when both $\vec{v}$ and $\vec{w}$ are in canonical, or standard position.
 
-
+\medskip
 With scalar multiplication, we can expand the commutativity and associativity of vector addition to the following:
+\begin{tcolorbox}
 \begin{thrm}
-Suppose $\vec{v},\vec{w}\in\mathbb{R}^{n}$ are vectors and $c,d\in\mathbb{R}$ are scalars. Then the following properties hold:
-      \begin{itemize}
-            \item $c(\vec{v}+\vec{w}) = c\vec{v}+c\vec{w}$,
-            \item $(c+d)\vec{v} = c\vec{v}+d\vec{v}$, and
-            \item $c(d\vec{v}) = (cd)\vec{v}$.
-      \end{itemize}
+      -Suppose $\vec{v},\vec{w}\in\mathbb{R}^{n}$ are vectors and $c,d\in\mathbb{R}$ are scalars. Then the following properties hold:
+            \begin{itemize}
+                  \item[(i)] $c(\vec{v}+\vec{w}) = c\vec{v}+c\vec{w}$,
+                  \item[(ii)] $(c+d)\vec{v} = c\vec{v}+d\vec{v}$, and
+                  \item[(iii)] $c(d\vec{v}) = (cd)\vec{v}$.
+            \end{itemize}
 \end{thrm}
+
+\tcblower
 
 \begin{proof}
       To prove the first property, note that we can use the definition of vector addition to add the vectors inside the paranthesis, then use the definition of scalar multiplication as follows.
@@ -199,5 +214,28 @@ Suppose $\vec{v},\vec{w}\in\mathbb{R}^{n}$ are vectors and $c,d\in\mathbb{R}$ ar
       \end{align*}
       The proofs of the other two properties would follow a similar pattern of reasoning that utilizes the definitions of vector addition and scalar multiplication.
 \end{proof}
+\end{tcolorbox}
+\bigskip \bigskip
+
+\section{Lengths, Angles, and Dot Product}
+
+When discussing geometric properties of vectors such as lengths and angles, we want our definitions to be independent of dimensions so that we can discuss lengths in higher dimensions as we do in two dimensions, for example.
+
+\medskip
+\subsection{The Dot Product} \hfill
+
+Also referred to as \emph{inner product} or \emph{scalar product}, the dot product is the main tool to extend geometric notions from two or three dimensions to any arbitrary dimension. It is effectively a way of combining two vectors so as to create \underline{\emph{a single number}}:
+
+\begin{tcolorbox}[colback=yellow!5!white]
+\begin{dfn}
+The dot product of two n-component real vectors is the linear combination of their components. So, suppose $\vec{v}=(v_1, v_2,\dots,v_n) \in \mathbb{R}^{n}$ and $\vec{w}=(w_1, w_2, \dots, w_n) \in \mathbb{R}^{n}$ are vectors. Then their \textbf{dot product}, denoted by $\vec{v}\cdot\vec{w}$, is the quantity:
+\[ \vec{v}\cdot\vec{w}=v_1w_1+v_2w_2+\dots+v_nw_n.  \]
+\end{dfn}
+\end{tcolorbox}
+
+\begin{note}
+The dot product is only defined if the two vectors have the same number of components. Some authors require that the first vector be a row vector and the second one be a column vector.
+\end{note}
+
 
 \end{document}
